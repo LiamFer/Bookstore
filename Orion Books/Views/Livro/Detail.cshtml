@@ -1,0 +1,94 @@
+﻿@model LivroDetailViewModel
+
+<div class="container my-5">
+    <div class="row">
+        <!-- Coluna da imagem de capa -->
+        <div class="col-md-4 text-center">
+            <img src="@Model.Livro.CapaURL" class="img-fluid rounded mb-4" alt="Capa do Livro">
+        </div>
+
+        <!-- Coluna das informações do livro -->
+        <div class="col-md-8">
+            <h1 class="mb-3">@Model.Livro.Titulo</h1>
+            <p><strong>Autor:</strong> @Model.Livro.Autor</p>
+            <p><strong>Gênero:</strong> @Model.Livro.Genero</p>
+            <p><strong>Ano de Publicação:</strong> @Model.Livro.AnoPublicado</p>
+            <p><strong>ISBN:</strong> @Model.Livro.ISBN</p>
+            <p><strong>Sinopse:</strong> @Model.Livro.Sinopse</p>
+
+            <!-- Botão de reserva -->
+            <div class="mt-4">
+                <button class="btn btn-primary btn-lg" onclick="reservarLivro()">Reservar Livro</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <h2>Outros livros do mesmo gênero</h2>
+
+    @if (!Model.LivrosRecomendados.Any())
+    {
+        <p class="text-muted">Não foram encontrados livros similares a este.</p>
+    }
+    else
+    {
+        <div id="similarBooksCarousel" class="carousel slide bg-light p-4 rounded"
+             style="min-height: 300px;"
+             data-bs-ride="@(Model.LivrosRecomendados.Count() >= 5 ? "carousel" : "")">
+
+            <div class="carousel-inner">
+                <!-- Primeira página do carrossel -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        @foreach (var livro in Model.LivrosRecomendados.Take(4))
+                        {
+                            
+                            <div class="col-6 col-md-3 text-center mb-4">
+                                <img src="@livro.CapaURL" class="img-fluid rounded mb-2" alt="Capa do Livro" style="height: 150px; object-fit: cover;">
+                                <h6>@livro.Titulo</h6>
+                                <p class="text-muted">@livro.Autor</p>
+                                <a asp-controller="Livro" asp-action="Detail" asp-route-id="@livro.Id" class="btn btn-success btn-sm">Exibir Informações</a>
+                            </div>
+                            
+                        }
+                    </div>
+                </div>
+
+                <!-- Segunda página do carrossel -->
+                @if (Model.LivrosRecomendados.Count() > 4)
+                {
+                    <div class="carousel-item">
+                        <div class="row">
+                            @foreach (var livro in Model.LivrosRecomendados.Skip(4).Take(4))
+                            {
+                                @if (Model.Livro.CapaURL != livro.CapaURL)
+                                {
+                                    <div class="col-6 col-md-3 text-center mb-4">
+                                        <img src="@livro.CapaURL" class="img-fluid rounded mb-2" alt="Capa do Livro" style="height: 150px; object-fit: cover;">
+                                        <h6>@livro.Titulo</h6>
+                                        <p class="text-muted">@livro.Autor</p>
+                                        <a asp-controller="Livro" asp-action="Detail" asp-route-id="@livro.Id" class="btn btn-success btn-sm">Exibir Informações</a>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- Controles do carrossel -->
+            @if (Model.LivrosRecomendados.Count() >= 5)
+            {
+                <button class="carousel-control-prev" type="button" data-bs-target="#similarBooksCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#similarBooksCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            }
+        </div>
+    }
+</div>

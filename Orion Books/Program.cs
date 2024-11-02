@@ -1,10 +1,13 @@
 using Microsoft.EntityFrameworkCore;
+using Orion_Books.DAO;
 using Orion_Books.Data;
+using Orion_Books.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ILivroDAO,LivroDAO>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));

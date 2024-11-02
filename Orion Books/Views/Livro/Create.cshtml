@@ -1,0 +1,83 @@
+﻿@model Orion_Books.Models.Livro
+
+<div class="container mt-5">
+    <h1>Adicionar Novo Livro</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div id="preview" style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; display: flex; align-items: center; justify-content: center; position: relative;">
+                <h5 id="previewText" style="position: absolute;">Pré-visualização da Capa</h5>
+                <img id="coverPreview" src="" alt="Pré-visualização da Capa" class="img-fluid" style="max-height: 100%; max-width: 100%; object-fit: cover; display:none;" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <form asp-action="Create" method="post">
+                <div class="mb-3">
+                    <label asp-for="Titulo" class="form-label">Título</label>
+                    <input asp-for="Titulo" type="text" class="form-control" name="Titulo" required>
+                    <span asp-validation-for="Titulo" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Autor" class="form-label">Autor</label>
+                    <input asp-for="Autor" type="text" class="form-control" name="Autor" required>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Genero" class="form-label">Gênero</label>
+                    <input asp-for="Genero" type="text" class="form-control" name="Genero" required>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="AnoPublicado" class="form-label">Ano Publicado</label>
+                    <input asp-for="AnoPublicado" type="number" class="form-control" name="AnoPublicado" required>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ISBN" class="form-label">ISBN</label>
+                    <input asp-for="ISBN" type="text" class="form-control" name="ISBN" required>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="CapaURL" class="form-label">URL da Capa</label>
+                    <input asp-for="CapaURL" type="url" class="form-control" id="capaURL" name="CapaURL" required oninput="updatePreview()">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Adicionar Livro</button>
+                <a href="@Url.Action("Index", "Livro")" class="btn btn-secondary">Voltar</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        function updatePreview() {
+            const url = document.getElementById('capaURL').value;
+            const previewImage = document.getElementById('coverPreview');
+            const previewText = document.getElementById('previewText');
+            if (url) {
+                previewImage.src = url;
+                previewImage.style.display = 'block'; // Exibe a imagem
+                previewText.style.display = 'none'; // Esconde o texto de pré-visualização
+            } else {
+                previewImage.style.display = 'none'; // Esconde a imagem
+                previewText.style.display = 'block'; // Exibe o texto de pré-visualização
+            }
+        }
+    </script>
+}
+
+<style>
+    /* Estilo para o foco dos campos do formulário */
+    .form-control:focus {
+        border-color: #6f42c1; /* Cor roxa clarinha */
+        box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25); /* Sombra roxa clarinha */
+    }
+
+    /* Assegura que o tamanho do preview seja igual ao do formulário */
+    #preview {
+        height: 100%; /* Para que o tamanho se ajuste automaticamente */
+        min-height: 400px; /* Definindo uma altura mínima para o preview */
+    }
+</style>

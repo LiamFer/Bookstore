@@ -12,6 +12,8 @@ namespace Orion_Books.Models
         public int AnoPublicado { get; set; }
         public string ISBN { get; set; }
         public string CapaURL { get; set; }
+
+        public string Sinopse { get; set; }
         public bool Disponivel { get; set; }
     }
 }

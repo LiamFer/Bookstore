@@ -1,6 +1,11 @@
 ﻿@model IEnumerable<Orion_Books.Models.Livro>
 
-<h1>Livros Disponíveis</h1>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Livros Disponíveis</h1>
+    <a href="@Url.Action("Create", "Livro")" class="btn btn-purple">
+        <i class="fas fa-pencil-alt" style="color: white;"></i> Adicionar novo Livro
+    </a>
+</div>
 
 <div class="table-responsive">
     <table id="myTable" class="table table-striped">
@@ -39,17 +44,7 @@
                         }
                     </td>
                     <td>
-                        @if (livro.Disponivel)
-                        {
-                            <form asp-controller="Livro" asp-action="Reservar" method="post">
-                                <input type="hidden" name="id" value="@livro.Id" />
-                                <button type="submit" class="btn btn-primary btn-sm">Reservar</button>
-                            </form>
-                        }
-                        else
-                        {
-                            <button class="btn btn-secondary btn-sm" disabled>Indisponível</button>
-                        }
+                        <a asp-controller="Livro" asp-action="Detail" asp-route-id="@livro.Id" class="btn btn-primary btn-sm">Visualizar</a>
                     </td>
                 </tr>
             }
@@ -82,3 +77,15 @@
         });
     </script>
 }
+
+<style>
+    .btn-purple {
+        background-color: purple; /* Cor de fundo roxa */
+        color: white; /* Cor do texto branca */
+        border: none; /* Remove a borda do botão */
+    }
+
+        .btn-purple:hover {
+            background-color: darkviolet; /* Cor mais escura ao passar o mouse */
+        }
+</style>
