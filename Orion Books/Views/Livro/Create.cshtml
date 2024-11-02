@@ -10,8 +10,10 @@
                 <img id="coverPreview" src="" alt="Pré-visualização da Capa" class="img-fluid" style="max-height: 100%; max-width: 100%; object-fit: cover; display:none;" />
             </div>
         </div>
-        <div class="col-md-6">
-            <form asp-action="Create" method="post">
+        <div class="col-md-6 mb-9">
+            <!-- Adicionei mb-4 aqui para espaçamento inferior -->
+            <form method="post" asp-action="Create">
+                <input asp-for="Disponivel" type="hidden" name="Disponivel" value=True />
                 <div class="mb-3">
                     <label asp-for="Titulo" class="form-label">Título</label>
                     <input asp-for="Titulo" type="text" class="form-control" name="Titulo" required>
@@ -41,6 +43,11 @@
                 <div class="mb-3">
                     <label asp-for="CapaURL" class="form-label">URL da Capa</label>
                     <input asp-for="CapaURL" type="url" class="form-control" id="capaURL" name="CapaURL" required oninput="updatePreview()">
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Sinopse" class="form-label">Sinopse</label>
+                    <textarea asp-for="Sinopse" class="form-control" name="Sinopse" rows="5" required></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Adicionar Livro</button>

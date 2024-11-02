@@ -1,0 +1,89 @@
+﻿@model Orion_Books.Models.Livro
+
+<div class="container mt-5">
+    <h1>Editar Informações</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div id="preview" style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
+                <img id="coverPreview" src="@Model.CapaURL" alt="Pré-visualização da Capa" class="img-fluid" />
+            </div>
+        </div>
+        <div class="col-md-6 mb-9">
+            <form method="post" asp-action="Edit">
+                <div class="row mb-3">
+                    <div class="col">
+                        <label asp-for="Titulo" class="form-label">Título</label>
+                        <input asp-for="Titulo" type="text" class="form-control" name="Titulo" value="@Model.Titulo" required>
+                        <span asp-validation-for="Titulo" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="Disponivel" class="form-label">Disponível</label>
+                        <select asp-for="Disponivel" class="form-control" name="Disponivel" required>
+                            <option value="true" selected="@(Model.Disponivel ? "selected" : null)">Sim</option>
+                            <option value="false" selected="@(Model.Disponivel ? null : "selected")">Não</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Autor" class="form-label">Autor</label>
+                    <input asp-for="Autor" type="text" class="form-control" name="Autor" value="@Model.Autor" required>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Genero" class="form-label">Gênero</label>
+                    <input asp-for="Genero" type="text" class="form-control" name="Genero" value="@Model.Genero" required>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="AnoPublicado" class="form-label">Ano Publicado</label>
+                    <input asp-for="AnoPublicado" type="number" class="form-control" name="AnoPublicado" value="@Model.AnoPublicado" required>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ISBN" class="form-label">ISBN</label>
+                    <input asp-for="ISBN" type="text" class="form-control" name="ISBN" value="@Model.ISBN" required>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="CapaURL" class="form-label">URL da Capa</label>
+                    <input asp-for="CapaURL" type="url" class="form-control" id="capaURL" name="CapaURL" value="@Model.CapaURL" required>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Sinopse" class="form-label">Sinopse</label>
+                    <textarea asp-for="Sinopse" class="form-control" name="Sinopse" rows="5" required>@Model.Sinopse</textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Atualizar Informações</button>
+                <a href="@Url.Action("Index", "Livro")" class="btn btn-secondary">Voltar</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Estilo para o foco dos campos do formulário */
+    .form-control:focus {
+        border-color: #6f42c1;
+        box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+    }
+
+    /* Ajuste do tamanho do preview para que fique igual ao do formulário */
+    #preview {
+        width: 100%;
+        max-width: 400px; /* Define uma largura máxima para o preview */
+        min-height: 250px; /* Define uma altura mínima menor para o preview */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Ajuste para a imagem da capa, para mantê-la centralizada e dentro dos limites */
+    #coverPreview {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /* Ajusta a imagem para caber sem cortar */
+    }
+</style>

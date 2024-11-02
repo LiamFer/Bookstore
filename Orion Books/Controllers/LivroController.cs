@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Orion_Books.DAO;
 using Orion_Books.Data;
 using Orion_Books.Interfaces;
 using Orion_Books.Models;
@@ -41,5 +42,38 @@ namespace Orion_Books.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Livro livro)
+        {
+            
+            if (!ModelState.IsValid)
+            {
+                return View(livro);
+            }
+            _livroDao.Add(livro);
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            var livro = await _livroDao.GetById(id);
+            return View(livro);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, Livro livro)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Erro ao tentar alterar Informações do Livro");
+                return View("Edit", livro);
+            }
+
+            _livroDao.Update(livro);
+            return RedirectToAction("Index");
+        }
+
+
     }
 }

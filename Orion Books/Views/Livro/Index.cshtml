@@ -3,7 +3,7 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h1>Livros Disponíveis</h1>
     <a href="@Url.Action("Create", "Livro")" class="btn btn-purple">
-        <i class="fas fa-pencil-alt" style="color: white;"></i> Adicionar novo Livro
+        <i class="fas fa-pencil-alt"></i> Adicionar novo Livro
     </a>
 </div>
 
@@ -44,7 +44,13 @@
                         }
                     </td>
                     <td>
-                        <a asp-controller="Livro" asp-action="Detail" asp-route-id="@livro.Id" class="btn btn-primary btn-sm">Visualizar</a>
+                        <!-- Contêiner de botões para alinhar Visualizar e Editar lado a lado -->
+                        <div class="d-inline-flex">
+                            <a asp-controller="Livro" asp-action="Detail" asp-route-id="@livro.Id" class="btn btn-primary btn-sm me-1">Visualizar</a>
+                            <a asp-controller="Livro" asp-action="Edit" asp-route-id="@livro.Id" class="btn btn-purple btn-sm">
+                                <i class="fas fa-pencil-alt"></i> <!-- Ícone de lápis -->
+                            </a>
+                        </div>
                     </td>
                 </tr>
             }
@@ -81,11 +87,15 @@
 <style>
     .btn-purple {
         background-color: purple; /* Cor de fundo roxa */
-        color: white; /* Cor do texto branca */
+        color: white; /* Cor do texto e do ícone em branco */
         border: none; /* Remove a borda do botão */
     }
 
         .btn-purple:hover {
             background-color: darkviolet; /* Cor mais escura ao passar o mouse */
+        }
+
+        .btn-purple .fa-pencil-alt {
+            color: white; /* Garante que o ícone de lápis seja branco */
         }
 </style>
