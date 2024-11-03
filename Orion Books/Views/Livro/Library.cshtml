@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Orion_Books.Models.Emprestimo>
+
+<div class="container my-5">
+    <h2 class="mb-4">Livros Reservados Atualmente</h2>
+    <div class="row">
+        @foreach (var record in Model)
+        {
+            var diasRestantes = (record.DataDevolucao - DateTime.Now).Days;
+            var prazoAtrasado = diasRestantes < 0;
+
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm position-relative">
+                    <img src="@record.Livro.CapaURL" class="card-img-top" alt="Capa do Livro">
+
+                    <div class="card-body">
+                        <h5 class="card-title">@record.Livro.Titulo</h5>
+                        <p class="card-text">
+                            <strong>Data do Empréstimo:</strong> @record.DataEmprestimo.ToString("dd/MM/yyyy")
+                        </p>
+
+                        <a asp-controller="Livro" asp-action="Detail" asp-route-id="@record.Livro.Id" class="btn btn-primary btn-sm mt-3">Ver Informações</a>
+                    </div>
+
+                    <span class="position-absolute top-0 end-0 p-2 badge @(diasRestantes >= 0 ? "bg-success" : "bg-danger")">
+                        @if (diasRestantes >= 0)
+                        {
+                            <i class="bi bi-clock"></i> <span>@diasRestantes dias restantes</span>
+
+                            
+                        }
+                        else
+                        {
+                            <i class="bi bi-exclamation-triangle-fill"></i>
+                            <span>Atrasado</span>
+                            }
+                    </span>
+
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,70 +1,72 @@
 ﻿@model IEnumerable<Orion_Books.Models.Livro>
 
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <h1>Livros Disponíveis</h1>
+<div class="container my-5">
 
-    <!-- Se o Usuário for o adm ele pode adicionar livro -->
-    @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
-    {
-        <a href="@Url.Action("Create", "Livro")" class="btn btn-purple">
-            <i class="fas fa-pencil-alt"></i> Adicionar novo Livro
-        </a>
-    }
-</div>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1>Livros Disponíveis</h1>
 
-<div class="table-responsive">
-    <table id="myTable" class="table table-striped">
-        <thead>
-            <tr>
-                <th>Capa</th>
-                <th>Título</th>
-                <th>Autor</th>
-                <th>Gênero</th>
-                <th>Ano Publicado</th>
-                <th>ISBN</th>
-                <th>Disponível</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var livro in Model)
-            {
+        <!-- Se o Usuário for o adm ele pode adicionar livro -->
+        @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+        {
+            <a href="@Url.Action("Create", "Livro")" class="btn btn-admin">
+                <i class="fas fa-pencil-alt"></i> Adicionar novo Livro
+            </a>
+        }
+    </div>
+
+    <div class="table-responsive">
+        <table id="myTable" class="table table-striped table-bordered">
+            <thead class="table-light">
                 <tr>
-                    <td>
-                        <img src="@livro.CapaURL" alt="Capa de @livro.Titulo" style="width: 50px; height: auto;" />
-                    </td>
-                    <td>@livro.Titulo</td>
-                    <td>@livro.Autor</td>
-                    <td>@livro.Genero</td>
-                    <td>@livro.AnoPublicado</td>
-                    <td>@livro.ISBN</td>
-                    <td>
-                        @if (livro.Disponivel)
-                        {
-                            <span class="badge bg-success">Sim</span>
-                        }
-                        else
-                        {
-                            <span class="badge bg-danger">Não</span>
-                        }
-                    </td>
-                    <td>
-                        <!-- Contêiner de botões para alinhar Visualizar e Editar lado a lado -->
-                        <div class="d-inline-flex">
-                            <a asp-controller="Livro" asp-action="Detail" asp-route-id="@livro.Id" class="btn btn-primary btn-sm me-1">Visualizar</a>
-                            <!-- Se o user for admin tbm ele pode editar as infos de qualquer livro -->
-                            @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
-                            {
-                                <a asp-controller="Livro" asp-action="Edit" asp-route-id="@livro.Id" class="btn btn-purple btn-sm">
-                                    <i class="fas fa-pencil-alt"></i> <!-- Ícone de lápis -->
-                                </a>
-                            }
-                        </div>
-                    </td>
+                    <th>Capa</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Gênero</th>
+                    <th>Ano Publicado</th>
+                    <th>ISBN</th>
+                    <th>Disponível</th>
+                    <th>Ações</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var livro in Model)
+                {
+                    <tr>
+                        <td>
+                            <img src="@livro.CapaURL" alt="Capa de @livro.Titulo" style="width: 50px; height: auto;" />
+                        </td>
+                        <td>@livro.Titulo</td>
+                        <td>@livro.Autor</td>
+                        <td>@livro.Genero</td>
+                        <td>@livro.AnoPublicado</td>
+                        <td>@livro.ISBN</td>
+                        <td>
+                            @if (livro.Disponivel)
+                            {
+                                <span class="badge bg-success">Sim</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Não</span>
+                            }
+                        </td>
+                        <td>
+                            <div class="d-inline-flex">
+                                <a asp-controller="Livro" asp-action="Detail" asp-route-id="@livro.Id" class="btn btn-primary btn-sm me-1">Visualizar</a>
+                                <!-- Se o user for admin tbm ele pode editar as infos de qualquer livro -->
+                                @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                                {
+                                    <a asp-controller="Livro" asp-action="Edit" asp-route-id="@livro.Id" class="btn btn-admin btn-sm">
+                                        <i class="fas fa-pencil-alt"></i> <!-- Ícone de lápis -->
+                                    </a>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
 
 @section scripts {
@@ -94,17 +96,31 @@
 }
 
 <style>
-    .btn-purple {
-        background-color: purple; /* Cor de fundo roxa */
-        color: white; /* Cor do texto e do ícone em branco */
-        border: none; /* Remove a borda do botão */
+    .btn-admin {
+        background-color: #23c483; 
+        color: white; 
+        border: none; 
     }
 
-        .btn-purple:hover {
-            background-color: darkviolet; /* Cor mais escura ao passar o mouse */
-        }
+    .btn-admin:hover {
+        background-color: #1e9e6d;
+    }
 
-        .btn-purple .fa-pencil-alt {
-            color: white; /* Garante que o ícone de lápis seja branco */
-        }
+    .table {
+        border-radius: 10px;
+        overflow: hidden; 
+    }
+
+    .table th {
+        background-color: #f8f9fa; 
+        font-weight: bold; 
+    }
+
+    .table td {
+        vertical-align: middle;
+    }
+
+    .badge {
+        font-size: 0.9rem; 
+    }
 </style>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Orion Books")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d03dc6c6aca3b6fd4a246dc751f9b7a14381a36")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc787e97379f54d6ce251377cfc2be2f4ceebf6f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Orion Books")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Orion Books")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

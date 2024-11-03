@@ -88,6 +88,7 @@ namespace Orion_Books.Controllers
             return View(new LivroBorrowViewModel(){ Livro = livro});
         }
 
+        [HttpPost]
         public async Task<IActionResult> SucessBorrow(LivroBorrowViewModel borrowVM) {
             var userID = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
@@ -110,6 +111,16 @@ namespace Orion_Books.Controllers
                 }
             }
 
+            return View();
+        }
+
+        public async Task<IActionResult> Library(int id)
+        {
+            var userID = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userID != null) { 
+                IEnumerable<Emprestimo> Livros = await _emprestimoDao.GetCurrentBooks(userID);
+                return View(Livros);
+            }
             return View();
         }
 
