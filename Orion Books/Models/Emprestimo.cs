@@ -9,12 +9,10 @@ namespace Orion_Books.Models
         public int Id { get; set; }
 
         public DateTime DataEmprestimo {  get; set; }
-        public DateTime DataEntrega { get; set; }
+        public DateTime? DataEntrega { get; set; }
         public DateTime DataDevolucao { get; set; }
 
         public bool Status { get; set; }
-        [ForeignKey("Usuario")]
-        public int UsuarioId { get; set; }
         public Usuario Usuario { get; set; }
         [ForeignKey("Livro")]
         public int LivroId { get; set; }

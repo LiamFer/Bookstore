@@ -1,16 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Orion_Books.DAO;
 using Orion_Books.Data;
 using Orion_Books.Interfaces;
 using Orion_Books.Models;
+using System.Security.Claims;
 
 namespace Orion_Books.Controllers
 {
     public class LivroController : Controller
     {
         private readonly ILivroDAO _livroDao;
-        public LivroController(ILivroDAO livroDAO) {
+        private readonly IEmprestimoDAO _emprestimoDao;
+        private readonly UserManager<Usuario> _userManager;
+
+        public LivroController(ILivroDAO livroDAO, IEmprestimoDAO emprestimoDao, UserManager<Usuario> userManager)
+        {
             _livroDao = livroDAO;
+            _emprestimoDao = emprestimoDao;
+            _userManager = userManager;
         }
 
 
@@ -74,6 +82,36 @@ namespace Orion_Books.Controllers
             return RedirectToAction("Index");
         }
 
+        public async Task<IActionResult> Borrow(int id)
+        {
+            var livro = await _livroDao.GetById(id);
+            return View(new LivroBorrowViewModel(){ Livro = livro});
+        }
+
+        public async Task<IActionResult> SucessBorrow(LivroBorrowViewModel borrowVM) {
+            var userID = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            // Mandando o Empréstimo pro DB se conseguir achar o Usuário
+            if (userID != null)
+            {
+                var usuario = _userManager.FindByIdAsync(userID).Result;
+
+                if (usuario != null)
+                {
+                    // Chamando a camada DAO pra acessar e inserir no meu Banco
+                    borrowVM.emprestimo.DataEntrega = null;
+                    borrowVM.emprestimo.Usuario = usuario;
+                    _emprestimoDao.Add(borrowVM.emprestimo);
+
+                    // Alterando o Status do Livro pra como não disponível
+                    var livro = await _livroDao.GetById(borrowVM.emprestimo.LivroId);
+                    livro.Disponivel = false;
+                    _livroDao.Update(livro);
+                }
+            }
+
+            return View();
+        }
 
     }
 }

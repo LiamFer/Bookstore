@@ -2,9 +2,14 @@
 
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h1>Livros Disponíveis</h1>
-    <a href="@Url.Action("Create", "Livro")" class="btn btn-purple">
-        <i class="fas fa-pencil-alt"></i> Adicionar novo Livro
-    </a>
+
+    <!-- Se o Usuário for o adm ele pode adicionar livro -->
+    @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+    {
+        <a href="@Url.Action("Create", "Livro")" class="btn btn-purple">
+            <i class="fas fa-pencil-alt"></i> Adicionar novo Livro
+        </a>
+    }
 </div>
 
 <div class="table-responsive">
@@ -47,9 +52,13 @@
                         <!-- Contêiner de botões para alinhar Visualizar e Editar lado a lado -->
                         <div class="d-inline-flex">
                             <a asp-controller="Livro" asp-action="Detail" asp-route-id="@livro.Id" class="btn btn-primary btn-sm me-1">Visualizar</a>
-                            <a asp-controller="Livro" asp-action="Edit" asp-route-id="@livro.Id" class="btn btn-purple btn-sm">
-                                <i class="fas fa-pencil-alt"></i> <!-- Ícone de lápis -->
-                            </a>
+                            <!-- Se o user for admin tbm ele pode editar as infos de qualquer livro -->
+                            @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                            {
+                                <a asp-controller="Livro" asp-action="Edit" asp-route-id="@livro.Id" class="btn btn-purple btn-sm">
+                                    <i class="fas fa-pencil-alt"></i> <!-- Ícone de lápis -->
+                                </a>
+                            }
                         </div>
                     </td>
                 </tr>

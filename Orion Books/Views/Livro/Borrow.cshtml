@@ -1,0 +1,48 @@
+﻿@model LivroBorrowViewModel
+
+@{
+    var dataEmprestimo = DateTime.Now;
+    var dataDevolucao = dataEmprestimo.AddDays(14);
+}
+
+<h1>Você deseja reservar o Livro</h1>
+<div class="container my-5">
+    <div class="row">
+        <!-- Coluna da imagem de capa do livro -->
+        <div class="col-md-4 text-center">
+            <img src="@Model.Livro.CapaURL" class="img-fluid rounded mb-4" alt="Capa do Livro">
+        </div>
+
+        <!-- Coluna com informações do empréstimo e do livro -->
+        <div class="col-md-8">
+            <h1 class="mb-3">@Model.Livro.Titulo</h1>
+            <p><strong>Autor:</strong> @Model.Livro.Autor</p>
+            <p><strong>Gênero:</strong> @Model.Livro.Genero</p>
+            <p><strong>Ano de Publicação:</strong> @Model.Livro.AnoPublicado</p>
+            <p><strong>ISBN:</strong> @Model.Livro.ISBN</p>
+            <p><strong>Sinopse:</strong> @Model.Livro.Sinopse</p>
+
+            <!-- Formulário para reservar o livro -->
+            <form asp-action="SucessBorrow" method="post">
+                <!-- Informações do Empréstimo (enviadas como campos ocultos) -->
+                <input type="hidden" asp-for="@Model.emprestimo.DataEmprestimo" value="@dataEmprestimo" />
+                <input type="hidden" asp-for="@Model.emprestimo.DataDevolucao" value="@dataDevolucao" />
+                <input type="hidden" asp-for="@Model.emprestimo.LivroId" value="@Model.Livro.Id" />
+                <input type="hidden" asp-for="@Model.emprestimo.Status" value="Pendente Devolução" />
+
+                <h4 class="mt-4">Informações do Empréstimo</h4>
+                <p><strong>Data do Empréstimo:</strong> @dataEmprestimo.ToString("dd/MM/yyyy")</p>
+                <p><strong>Data de Devolução:</strong> @dataDevolucao.ToString("dd/MM/yyyy")</p>
+
+                <!-- Informações do Usuário -->
+                <h5 class="mt-3">Seus Dados</h5>
+                <p><strong>Usuário:</strong> @User.Identity.Name</p>
+
+                <!-- Botão para confirmar o empréstimo -->
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Confirmar Empréstimo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

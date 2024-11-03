@@ -16,9 +16,28 @@
             <p><strong>ISBN:</strong> @Model.Livro.ISBN</p>
             <p><strong>Sinopse:</strong> @Model.Livro.Sinopse</p>
 
-            <!-- Botão de reserva -->
+            
             <div class="mt-4">
-                <button class="btn btn-primary btn-lg" onclick="reservarLivro()">Reservar Livro</button>
+
+                <!-- Vejo se o Usuário está logado pra poder reservar algum livro -->
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <!-- Caso o Livro esteja Disponível o Usuário pode reservar ele -->
+
+                    @if (Model.Livro.Disponivel)
+                    {
+                        <a asp-controller="Livro" asp-action="Borrow" asp-route-id="@Model.Livro.Id" class="btn btn-primary btn-lg">Reservar Livro</a>
+                    }
+                    else
+                    {
+                        <button class="btn btn-secondary btn-lg" disabled>Livro Indisponível para Reserva</button>
+                    }
+                } else
+                {
+                    <a asp-controller="Conta" asp-action="Login" class="btn btn-primary btn-lg">Faça Login para Reservar</a>
+                }
+
+
             </div>
         </div>
     </div>

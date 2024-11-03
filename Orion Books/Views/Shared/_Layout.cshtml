@@ -53,15 +53,35 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Sobre</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Meu Perfil
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                                <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
-                                <li><a class="dropdown-item" href="#">Log Off</a></li>
-                            </ul>
-                        </li>
+
+                        <!-- Se o Usuário estiver Logado eu mostro essas Opções pra ele -->
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Meu Perfil
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                                    <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
+                                    <li>
+                                        <form asp-area="" asp-controller="Conta" asp-action="Logoff">
+                                            <button class="dropdown-item">Log Off</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        } else
+                        {
+                            <!-- Se o Usuário n tiver Logado eu mostro essas Opções pra ele -->
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Conta" asp-action="Login">Login</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Conta" asp-action="Register">Criar Conta</a>
+                            </li>
+                        }
+
                     </ul>
                 </div>
             </div>

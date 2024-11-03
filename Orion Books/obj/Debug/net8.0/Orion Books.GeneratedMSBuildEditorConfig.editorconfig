@@ -18,12 +18,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Windows\Desktop\Stuff\Coding\Bookstore\Orion Books
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Windows/Desktop/Stuff/Coding/Bookstore/Orion Books/Views/Conta/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Windows/Desktop/Stuff/Coding/Bookstore/Orion Books/Views/Conta/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Windows/Desktop/Stuff/Coding/Bookstore/Orion Books/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Windows/Desktop/Stuff/Coding/Bookstore/Orion Books/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Windows/Desktop/Stuff/Coding/Bookstore/Orion Books/Views/Livro/Borrow.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGl2cm9cQm9ycm93LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Windows/Desktop/Stuff/Coding/Bookstore/Orion Books/Views/Livro/Create.cshtml]
@@ -40,6 +52,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Windows/Desktop/Stuff/Coding/Bookstore/Orion Books/Views/Livro/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGl2cm9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Windows/Desktop/Stuff/Coding/Bookstore/Orion Books/Views/Livro/SucessBorrow.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGl2cm9cU3VjZXNzQm9ycm93LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Windows/Desktop/Stuff/Coding/Bookstore/Orion Books/Views/Shared/Error.cshtml]
