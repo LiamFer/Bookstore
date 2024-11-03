@@ -6,7 +6,7 @@ namespace Orion_Books.Data
 {
     public class Charger
     {
-        public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
+        public static async Task ChargeUsers(IApplicationBuilder applicationBuilder)
         {
             using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
             {
@@ -20,45 +20,47 @@ namespace Orion_Books.Data
 
                 //Users
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<Usuario>>();
-                string adminUserEmail = "teddysmithdeveloper@gmail.com";
+                string adminUserEmail = "wiilfern1910@outlook.com";
 
                 var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
                 if (adminUser == null)
                 {
                     var newAdminUser = new Usuario()
                     {
-                        UserName = "teddysmithdev",
+                        UserName = "hotwillas",
                         Email = adminUserEmail,
                         EmailConfirmed = true,
                         Endereco = new Endereco()
                         {
-                            Rua = "123 Main St",
-                            Bairro = "Charlotte",
-                            Cidade = "NC"
+                            Rua = "Rua 14 de Julho",
+                            Bairro = "Capelacarai",
+                            Cidade = "Vinhedo",
+                            Numero = 193
                         }
                     };
-                    await userManager.CreateAsync(newAdminUser, "Coding@1234?");
+                    await userManager.CreateAsync(newAdminUser, "12345Koala@?");
                     await userManager.AddToRoleAsync(newAdminUser, UserRoles.adminUser);
                 }
 
-                string UsuarioEmail = "user@etickets.com";
+                string UsuarioEmail = "marcelogoulart@gmail.com";
 
                 var Usuario = await userManager.FindByEmailAsync(UsuarioEmail);
                 if (Usuario == null)
                 {
                     var newUsuario = new Usuario()
                     {
-                        UserName = "app-user",
+                        UserName = "marcelo_goulart",
                         Email = UsuarioEmail,
                         EmailConfirmed = true,
                         Endereco = new Endereco()
                         {
-                            Rua = "123 Main St",
-                            Bairro = "Charlotte",
-                            Cidade = "NC"
+                            Rua = "Rua Campinas",
+                            Bairro = "Campinas",
+                            Cidade = "Campinas",
+                            Numero = 192
                         }
                     };
-                    await userManager.CreateAsync(newUsuario, "Coding@1234?");
+                    await userManager.CreateAsync(newUsuario, "12345Abacate@?");
                     await userManager.AddToRoleAsync(newUsuario, UserRoles.standardUser);
                 }
             }
