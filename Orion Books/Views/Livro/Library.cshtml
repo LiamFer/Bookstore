@@ -5,8 +5,8 @@
     <div class="row">
         @foreach (var record in Model)
         {
-            var diasRestantes = (record.DataDevolucao - DateTime.Now).Days;
-            var prazoAtrasado = diasRestantes < 0;
+            var diasRestantes = (record.DataDevolucao - DateTime.Now).Days + 1;
+            var prazoAtrasado = diasRestantes <= 0;
 
             <div class="col-md-3 mb-4">
                 <div class="card shadow-sm position-relative">
@@ -18,11 +18,11 @@
                             <strong>Data do Empréstimo:</strong> @record.DataEmprestimo.ToString("dd/MM/yyyy")
                         </p>
 
-                        <a asp-controller="Livro" asp-action="Detail" asp-route-id="@record.Livro.Id" class="btn btn-primary btn-sm mt-3">Ver Informações</a>
+                        <a asp-controller="Livro" asp-action="ReservedBook" asp-route-id="@record.Livro.Id" class="btn btn-primary btn-sm mt-3">Ver Informações</a>
                     </div>
 
-                    <span class="position-absolute top-0 end-0 p-2 badge @(diasRestantes >= 0 ? "bg-success" : "bg-danger")">
-                        @if (diasRestantes >= 0)
+                    <span class="position-absolute top-0 end-0 p-2 badge @(diasRestantes >= 1 ? "bg-success" : "bg-danger")">
+                        @if (diasRestantes >= 1)
                         {
                             <i class="bi bi-clock"></i> <span>@diasRestantes dias restantes</span>
 

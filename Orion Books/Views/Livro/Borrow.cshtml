@@ -27,6 +27,7 @@
                 <!-- Informações do Empréstimo (enviadas como campos ocultos) -->
                 <input type="hidden" asp-for="@Model.emprestimo.DataEmprestimo" value="@dataEmprestimo" />
                 <input type="hidden" asp-for="@Model.emprestimo.DataDevolucao" value="@dataDevolucao" />
+                <input type="hidden" asp-for="@Model.emprestimo.DataEntrega" value="null" />
                 <input type="hidden" asp-for="@Model.emprestimo.LivroId" value="@Model.Livro.Id" />
                 <input type="hidden" asp-for="@Model.emprestimo.Status" value="Pendente Devolução" />
 

@@ -1,0 +1,60 @@
+﻿@model LivroBorrowViewModel
+
+@{
+    var diasRestantes = (Model.emprestimo.DataDevolucao - DateTime.Now).Days + 1;
+    var prazoAtrasado = diasRestantes <= 0;
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="@Model.Livro.CapaURL" alt="Capa do Livro" class="img-fluid rounded shadow">
+        </div>
+
+        <div class="col-md-8">
+            <h2 class="fw-bold">@Model.Livro.Titulo</h2>
+            <p class="text-muted">Autor: <span class="text-dark">@Model.Livro.Autor</span></p>
+            <p class="text-muted">Gênero: <span class="text-dark">@Model.Livro.Genero</span></p>
+
+            <div class="mt-4">
+                <h5 class="fw-bold">Descrição</h5>
+                <p class="text-justify">
+                    @Model.Livro.Sinopse
+                </p>
+            </div>
+
+            <div class="mt-4">
+                <h5 class="fw-bold">Informações do Empréstimo</h5>
+                <p class="text-muted">Data do Empréstimo: <span class="text-dark">@Model.emprestimo.DataEmprestimo.ToString("dd/MM/yyyy")</span></p>
+                <p class="text-muted">Data de Devolução: <span class="text-dark">@Model.emprestimo.DataDevolucao.ToString("dd/MM/yyyy")</span></p>
+                <p class="text-muted">
+                    Tempo Restante:
+                    @if (@diasRestantes > 0)
+                    {
+                        <span class="fw-bold text-danger">@diasRestantes DIA(S) RESTANTE(S) PARA DEVOLUÇÃO</span>
+                    } else
+                    {
+                        <span class="fw-bold text-danger">ENTREGA DO LIVRO ATRASADA</span>
+                    }
+                </p>
+            </div>
+
+            <div class="mt-4">
+                <form asp-action="ReturnBook" asp-controller="Livro" asp-route-id="@Model.Livro.Id" method="post">
+                    <button type="submit" class="btn btn-danger btn-lg">Devolver Livro</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .container h2 {
+        color: #23C483;
+    }
+
+    .container h5 {
+        color: #343a40;
+    }
+</style>
+

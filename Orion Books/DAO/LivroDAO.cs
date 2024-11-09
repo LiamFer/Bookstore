@@ -41,6 +41,19 @@ namespace Orion_Books.DAO
             return await Context.Livros.Where(l => l.Genero == genero).ToListAsync();
         }
 
+        public async Task<LivroBorrowViewModel> getBookWithLoan(int id)
+        {
+            LivroBorrowViewModel VM = new LivroBorrowViewModel
+            {
+                Livro = await Context.Livros.FirstOrDefaultAsync(i => i.Id == id),
+                emprestimo = await Context.Emprestimo.FirstOrDefaultAsync(e => e.LivroId == id && e.DataEntrega == null)
+            };
+            return VM;
+
+            // Eu poderia voltar assim, mas ai na hora de editar eles no banco não sei se daria certo, ai volto o VM q criei
+            //return await Context.Emprestimo.Include(e => e.Livro).FirstOrDefaultAsync(e => e.Livro.Id == id);
+        }
+
         public bool Save()
         {
             var saved = Context.SaveChanges();

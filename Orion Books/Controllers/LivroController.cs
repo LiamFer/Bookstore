@@ -100,7 +100,6 @@ namespace Orion_Books.Controllers
                 if (usuario != null)
                 {
                     // Chamando a camada DAO pra acessar e inserir no meu Banco
-                    borrowVM.emprestimo.DataEntrega = null;
                     borrowVM.emprestimo.Usuario = usuario;
                     _emprestimoDao.Add(borrowVM.emprestimo);
 
@@ -122,6 +121,25 @@ namespace Orion_Books.Controllers
                 return View(Livros);
             }
             return View();
+        }
+
+
+        public async Task<IActionResult> ReservedBook(int id) 
+        {
+            LivroBorrowViewModel livroData = await _livroDao.getBookWithLoan(id);
+            return View(livroData); 
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> ReturnBook(int id)
+        {
+            LivroBorrowViewModel VM = await _livroDao.getBookWithLoan(id);
+            VM.emprestimo.DataEntrega = DateTime.Now;
+            VM.Livro.Disponivel = true;
+            _livroDao.Update(VM.Livro);
+            _emprestimoDao.Update(VM.emprestimo);
+            return RedirectToAction("Index");
         }
 
     }
