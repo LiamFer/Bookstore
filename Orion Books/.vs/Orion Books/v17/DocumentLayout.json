@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "Controllers\\LivroController.cs",
               "ToolTip": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\Controllers\\LivroController.cs",
               "RelativeToolTip": "Controllers\\LivroController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAhwB0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAhwCQAAABxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T10:23:34.581Z",
               "IsPinned": true,
@@ -61,8 +61,7 @@
               "ViewState": "AgIAABgAAAAAAAAAAAAAABMAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-09T10:30:05.045Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -74,8 +73,7 @@
               "RelativeToolTip": "Views\\Livro\\Library.cshtml",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-09T11:22:22.046Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-09T11:22:22.046Z"
             },
             {
               "$type": "Document",
@@ -87,8 +85,7 @@
               "RelativeToolTip": "Views\\Livro\\Borrow.cshtml",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-09T11:14:44.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-09T11:14:44.034Z"
             },
             {
               "$type": "Document",
@@ -100,8 +97,7 @@
               "RelativeToolTip": "Interfaces\\ILivroDAO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T11:12:30.091Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-09T11:12:30.091Z"
             },
             {
               "$type": "Document",
@@ -113,8 +109,7 @@
               "RelativeToolTip": "DAO\\LivroDAO.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAIwDIAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T10:40:08.984Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-09T10:40:08.984Z"
             }
           ]
         }
