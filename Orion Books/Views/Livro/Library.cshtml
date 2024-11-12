@@ -1,42 +1,87 @@
-﻿@model IEnumerable<Orion_Books.Models.Emprestimo>
-
+﻿@using Orion_Books.ViewModels
+@model LibraryViewModel
 <div class="container my-5">
     <h2 class="mb-4">Livros Reservados Atualmente</h2>
     <div class="row">
-        @foreach (var record in Model)
+        @foreach (var record in Model.library)
         {
             var diasRestantes = (record.DataDevolucao - DateTime.Now).Days + 1;
-            var prazoAtrasado = diasRestantes <= 0;
 
-            <div class="col-md-3 mb-4">
-                <div class="card shadow-sm position-relative">
-                    <img src="@record.Livro.CapaURL" class="card-img-top" alt="Capa do Livro">
+                <div class="col-md-3 mb-4">
+                    <div class="card shadow-sm position-relative" style="height: 100%; min-height: 420px;">
+                        <img src="@record.Livro.CapaURL" class="card-img-top" alt="Capa do Livro" style="height: 200px; object-fit: cover;">
 
-                    <div class="card-body">
-                        <h5 class="card-title">@record.Livro.Titulo</h5>
-                        <p class="card-text">
-                            <strong>Data do Empréstimo:</strong> @record.DataEmprestimo.ToString("dd/MM/yyyy")
-                        </p>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">@record.Livro.Titulo</h5>
+                            <p class="card-text mb-2">
+                                <strong>Data do Empréstimo:</strong> @record.DataEmprestimo.ToString("dd/MM/yyyy")
+                            </p>
 
-                        <a asp-controller="Livro" asp-action="ReservedBook" asp-route-id="@record.Livro.Id" class="btn btn-primary btn-sm mt-3">Ver Informações</a>
-                    </div>
+                            <a asp-controller="Livro" asp-action="ReservedBook" asp-route-id="@record.Livro.Id" class="btn btn-primary btn-sm mt-auto">Ver Informações</a>
+                        </div>
 
-                    <span class="position-absolute top-0 end-0 p-2 badge @(diasRestantes >= 1 ? "bg-success" : "bg-danger")">
+                        <span class="position-absolute top-0 end-0 p-2 badge @(diasRestantes >= 1 ? "bg-success" : "bg-danger")">
                         @if (diasRestantes >= 1)
                         {
-                            <i class="bi bi-clock"></i> <span>@diasRestantes dias restantes</span>
-
-                            
+                                    <i class="bi bi-clock"></i> <span>@diasRestantes dias restantes</span>
                         }
                         else
                         {
-                            <i class="bi bi-exclamation-triangle-fill"></i>
-                            <span>Atrasado</span>
-                            }
-                    </span>
-
+                                    <i class="bi bi-exclamation-triangle-fill"></i> <span>Atrasado</span>
+                        }
+                        </span>
+                    </div>
                 </div>
-            </div>
         }
     </div>
+
+<div class="container my-5">
+    <h2>Histórico de Livros Lidos</h2>
+
+        @if (!Model.history.Any())
+        {
+            <p class="text-muted">Não foram encontrados livros no seu Histórico.</p>
+        }
+        else
+        {
+            <div id="historicoCarousel" class="carousel slide bg-light p-4 rounded" data-bs-interval="false">
+                <div class="carousel-inner">
+                    @for (int i = 0; i < Model.history.Count(); i += 4)
+                    {
+                            <div class="carousel-item @(i == 0 ? "active" : "")">
+                                <div class="row">
+                                @foreach (var livro in Model.history.Skip(i).Take(4))
+                                {
+                                            <div class="col-6 col-md-3 text-center mb-4">
+                                                <img src="@livro.Livro.CapaURL" class="img-fluid rounded mb-2" alt="Capa do Livro" style="height: 150px; object-fit: cover;">
+                                                <h6>@livro.Livro.Titulo</h6>
+                                                <p class="text-muted">@livro.Livro.Autor<br>@livro.DataEntrega</p>
+                                                <a asp-controller="Livro" asp-action="Detail" asp-route-id="@livro.Livro.Id" class="btn btn-success btn-sm">Exibir Informações</a>
+                                            </div>
+                                }
+                                </div>
+                            </div>
+                    }
+                </div>
+
+        <button class="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#historicoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next custom-carousel-control" type="button" data-bs-target="#historicoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+            </div>
+        }
 </div>
+
+    
+</div>
+
+<style>
+    .custom-carousel-control .carousel-control-prev-icon,
+    .custom-carousel-control .carousel-control-next-icon {
+    background-color: black; /* Define a cor preta para as setas */
+    border-radius: 50%;      /* Deixa as setas arredondadas, se desejar */
+}</style>

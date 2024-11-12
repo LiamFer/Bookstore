@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Orion_Books.Models
+namespace Orion_Books.ViewModels
 {
     public class LoginViewModel
     {

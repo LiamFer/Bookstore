@@ -40,6 +40,15 @@ namespace Orion_Books.DAO
             .ToListAsync();
         }
 
+        public async Task<IEnumerable<Emprestimo>> GetHistory(string userId)
+        {
+            // Retornando uma List de Livros que foram lidos e já devolvidos por determinado Usuário
+            return await Context.Emprestimo
+            .Include(e => e.Livro)
+            .Where(e => e.DataEntrega != null && e.Usuario.Id == userId).OrderByDescending(e => e.DataEntrega)
+            .ToListAsync();
+        }
+
         public async Task<Emprestimo> GetById(int id)
         {
             return await Context.Emprestimo.FirstOrDefaultAsync(i => i.Id == id);

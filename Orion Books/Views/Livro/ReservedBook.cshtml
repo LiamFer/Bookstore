@@ -1,4 +1,5 @@
-﻿@model LivroBorrowViewModel
+﻿@using Orion_Books.ViewModels
+@model LivroBorrowViewModel
 
 @{
     var diasRestantes = (Model.emprestimo.DataDevolucao - DateTime.Now).Days + 1;

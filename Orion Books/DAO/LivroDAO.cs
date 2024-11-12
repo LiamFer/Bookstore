@@ -2,6 +2,7 @@
 using Orion_Books.Data;
 using Orion_Books.Interfaces;
 using Orion_Books.Models;
+using Orion_Books.ViewModels;
 
 namespace Orion_Books.DAO
 {

@@ -4,6 +4,7 @@ using Orion_Books.DAO;
 using Orion_Books.Data;
 using Orion_Books.Interfaces;
 using Orion_Books.Models;
+using Orion_Books.ViewModels;
 using System.Security.Claims;
 
 namespace Orion_Books.Controllers
@@ -116,8 +117,12 @@ namespace Orion_Books.Controllers
         public async Task<IActionResult> Library(int id)
         {
             var userID = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (userID != null) { 
-                IEnumerable<Emprestimo> Livros = await _emprestimoDao.GetCurrentBooks(userID);
+            if (userID != null) {
+                LibraryViewModel Livros = new LibraryViewModel() {
+                    library = await _emprestimoDao.GetCurrentBooks(userID),
+                    history = await _emprestimoDao.GetHistory(userID)
+                };
+                //IEnumerable<Emprestimo> Livros = ;
                 return View(Livros);
             }
             return View();
