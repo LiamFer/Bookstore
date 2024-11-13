@@ -55,8 +55,7 @@
               "ViewState": "AgIAAGQAAAAAAAAAAAAYwH0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T22:19:14.982Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -68,8 +67,7 @@
               "RelativeToolTip": "Views\\Livro\\Detail.cshtml",
               "ViewState": "AgIAACEAAAAAAAAAAAAAAHEAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T22:45:22.316Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T22:45:22.316Z"
             },
             {
               "$type": "Document",
@@ -81,8 +79,7 @@
               "RelativeToolTip": "Models\\Livro.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T22:40:56.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T22:40:56.94Z"
             },
             {
               "$type": "Document",
@@ -94,8 +91,7 @@
               "RelativeToolTip": "Views\\Livro\\Borrow.cshtml",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T22:28:54.389Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T22:28:54.389Z"
             },
             {
               "$type": "Document",
@@ -107,8 +103,7 @@
               "RelativeToolTip": "Views\\Livro\\Edit.cshtml",
               "ViewState": "AgIAADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T22:28:51.142Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T22:28:51.142Z"
             },
             {
               "$type": "Document",
@@ -120,8 +115,7 @@
               "RelativeToolTip": "DAO\\EmprestimoDAO.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAwwCYAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T22:24:24.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T22:24:24.373Z"
             },
             {
               "$type": "Document",
@@ -133,8 +127,7 @@
               "RelativeToolTip": "ViewModels\\LibraryViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T22:20:27.635Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T22:20:27.635Z"
             },
             {
               "$type": "Document",
@@ -144,7 +137,7 @@
               "RelativeDocumentMoniker": "Views\\Livro\\Library.cshtml",
               "ToolTip": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\Views\\Livro\\Library.cshtml",
               "RelativeToolTip": "Views\\Livro\\Library.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADQAAABVAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-12T22:20:05.833Z",
               "EditorCaption": ""

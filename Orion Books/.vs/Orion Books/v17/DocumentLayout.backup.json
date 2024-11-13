@@ -7,32 +7,32 @@
       "RelativeMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|solutionrelative:views\\livro\\library.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|c:\\users\\windows\\desktop\\stuff\\coding\\bookstore\\orion books\\viewmodels\\libraryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|solutionrelative:viewmodels\\libraryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|c:\\users\\windows\\desktop\\stuff\\coding\\bookstore\\orion books\\dao\\emprestimodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|solutionrelative:dao\\emprestimodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|c:\\users\\windows\\desktop\\stuff\\coding\\bookstore\\orion books\\views\\livro\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|solutionrelative:views\\livro\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|c:\\users\\windows\\desktop\\stuff\\coding\\bookstore\\orion books\\views\\livro\\borrow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|solutionrelative:views\\livro\\borrow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|c:\\users\\windows\\desktop\\stuff\\coding\\bookstore\\orion books\\controllers\\livrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|solutionrelative:controllers\\livrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|c:\\users\\windows\\desktop\\stuff\\coding\\bookstore\\orion books\\models\\livro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|solutionrelative:models\\livro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|c:\\users\\windows\\desktop\\stuff\\coding\\bookstore\\orion books\\views\\livro\\borrow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|solutionrelative:views\\livro\\borrow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|c:\\users\\windows\\desktop\\stuff\\coding\\bookstore\\orion books\\views\\livro\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|solutionrelative:views\\livro\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|c:\\users\\windows\\desktop\\stuff\\coding\\bookstore\\orion books\\dao\\emprestimodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|solutionrelative:dao\\emprestimodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|c:\\users\\windows\\desktop\\stuff\\coding\\bookstore\\orion books\\viewmodels\\libraryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|solutionrelative:viewmodels\\libraryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|c:\\users\\windows\\desktop\\stuff\\coding\\bookstore\\orion books\\controllers\\livrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56858904-D1BD-4216-A9E4-DD9765E88E5E}|Orion Books.csproj|solutionrelative:controllers\\livrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +46,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "LivroController.cs",
               "DocumentMoniker": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\Controllers\\LivroController.cs",
               "RelativeDocumentMoniker": "Controllers\\LivroController.cs",
@@ -55,8 +55,7 @@
               "ViewState": "AgIAAGQAAAAAAAAAAAAYwH0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T22:19:14.982Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -68,12 +67,11 @@
               "RelativeToolTip": "Views\\Livro\\Detail.cshtml",
               "ViewState": "AgIAACEAAAAAAAAAAAAAAHEAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T22:45:22.316Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T22:45:22.316Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Livro.cs",
               "DocumentMoniker": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\Models\\Livro.cs",
               "RelativeDocumentMoniker": "Models\\Livro.cs",
@@ -81,12 +79,11 @@
               "RelativeToolTip": "Models\\Livro.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T22:40:56.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T22:40:56.94Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Borrow.cshtml",
               "DocumentMoniker": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\Views\\Livro\\Borrow.cshtml",
               "RelativeDocumentMoniker": "Views\\Livro\\Borrow.cshtml",
@@ -94,38 +91,35 @@
               "RelativeToolTip": "Views\\Livro\\Borrow.cshtml",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T22:28:54.389Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T22:28:54.389Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\Views\\Livro\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Livro\\Edit.cshtml",
               "ToolTip": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\Views\\Livro\\Edit.cshtml",
               "RelativeToolTip": "Views\\Livro\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T22:28:51.142Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T22:28:51.142Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "EmprestimoDAO.cs",
               "DocumentMoniker": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\DAO\\EmprestimoDAO.cs",
               "RelativeDocumentMoniker": "DAO\\EmprestimoDAO.cs",
               "ToolTip": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\DAO\\EmprestimoDAO.cs",
               "RelativeToolTip": "DAO\\EmprestimoDAO.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAwwCkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAwwCYAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T22:24:24.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T22:24:24.373Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "LibraryViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\ViewModels\\LibraryViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\LibraryViewModel.cs",
@@ -133,8 +127,7 @@
               "RelativeToolTip": "ViewModels\\LibraryViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T22:20:27.635Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T22:20:27.635Z"
             },
             {
               "$type": "Document",
@@ -144,7 +137,7 @@
               "RelativeDocumentMoniker": "Views\\Livro\\Library.cshtml",
               "ToolTip": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\Views\\Livro\\Library.cshtml",
               "RelativeToolTip": "Views\\Livro\\Library.cshtml",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAkwEwAAABRAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-12T22:20:05.833Z",
               "EditorCaption": ""
