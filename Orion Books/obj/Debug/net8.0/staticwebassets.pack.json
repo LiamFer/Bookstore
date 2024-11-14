@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Orion Books.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\Misc\\book_recommendations.svg",
+      "PackagePath": "staticwebassets\\Misc\\book_recommendations.svg"
+    },
+    {
       "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

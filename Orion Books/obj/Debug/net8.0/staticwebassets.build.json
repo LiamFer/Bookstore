@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zkG7kUmpkqhT4ZH3kwIyHNN0foWyUWbJW3UBEP8eLpQ=",
+  "Hash": "Z1ys4QuuQK/dPY2LSlu+wMzk1axJe6d2vxngdS0ynzw=",
   "Source": "Orion Books",
   "BasePath": "_content/Orion Books",
   "Mode": "Default",
@@ -1193,6 +1193,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\Misc\\book_recommendations.svg",
+      "SourceId": "Orion Books",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\",
+      "BasePath": "_content/Orion Books",
+      "RelativePath": "Misc/book_recommendations.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Misc\\book_recommendations.svg"
     }
   ]
 }

@@ -8,6 +8,9 @@ namespace Orion_Books.Interfaces
         Task<IEnumerable<Emprestimo>> GetCurrentBooks(string userId);
 
         Task<IEnumerable<Emprestimo>> GetHistory(string userId);
+
+        Task<IEnumerable<Livro>> BuildBookRecommendation(string userId);
+
         Task<Emprestimo> GetById(int id);
 
         bool Add(Emprestimo emprestimo);

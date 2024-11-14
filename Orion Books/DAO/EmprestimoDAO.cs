@@ -49,6 +49,28 @@ namespace Orion_Books.DAO
             .ToListAsync();
         }
 
+        public async Task<IEnumerable<Livro>> BuildBookRecommendation(string userId)
+        {
+            var mostReadGenres = await Context.Emprestimo
+                .Include(e => e.Livro)
+                .Where(e => e.Usuario.Id == userId)
+                .GroupBy(e => e.Livro.Genero)
+                .OrderByDescending(g => g.Count()) 
+                .Take(3)                           
+                .Select(g => g.Key)                
+                .ToListAsync();
+
+            return await Context.Emprestimo
+                .Include(e => e.Livro)
+                .Where(e => mostReadGenres.Contains(e.Livro.Genero))
+                .Select(e => e.Livro)
+                .Distinct()
+                .OrderBy(r => Guid.NewGuid())
+                .Take(3)
+                .ToListAsync();
+        }
+
+
         public async Task<Emprestimo> GetById(int id)
         {
             return await Context.Emprestimo.FirstOrDefaultAsync(i => i.Id == id);

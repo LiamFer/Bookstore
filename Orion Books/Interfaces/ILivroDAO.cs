@@ -8,6 +8,7 @@ namespace Orion_Books.Interfaces
         Task<IEnumerable<Livro>> GetAll();
         Task<Livro> GetById(int id);
         Task<IEnumerable<Livro>> GetLivroByGenero(string genero);
+
         Task<LivroBorrowViewModel> getBookWithLoan(int id);
 
         bool Add(Livro livro);
