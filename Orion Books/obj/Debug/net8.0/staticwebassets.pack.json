@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Orion Books.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\Misc\\HomePage.jpg",
+      "PackagePath": "staticwebassets\\Misc\\HomePage.jpg"
+    },
+    {
       "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\Misc\\biography.png",
       "PackagePath": "staticwebassets\\Misc\\biography.png"
     },
@@ -25,8 +29,20 @@
       "PackagePath": "staticwebassets\\Misc\\history.jpg"
     },
     {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\Misc\\loginBackground.png",
+      "PackagePath": "staticwebassets\\Misc\\loginBackground.png"
+    },
+    {
       "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\Misc\\ocean.jpg",
       "PackagePath": "staticwebassets\\Misc\\ocean.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\loginPage.css",
+      "PackagePath": "staticwebassets\\css\\loginPage.css"
+    },
+    {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\registerPage.css",
+      "PackagePath": "staticwebassets\\css\\registerPage.css"
     },
     {
       "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\site.css",

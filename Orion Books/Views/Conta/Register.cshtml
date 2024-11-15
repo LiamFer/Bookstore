@@ -5,69 +5,57 @@
 	ViewData["Title"] = "Registrar Conta";
 }
 
-<div class="row">
-    <div class="col-md-6 offset-3">
-        <p>
-            <h4>Sign up for a new account</h4>
-        </p>
+<link rel="stylesheet" href="~/css/registerPage.css" asp-append-version="true" />
 
+<div class="container-blur">
+    <div>
         @if (TempData["Erro"] != null)
         {
             <div class="col-md-12 alert alert-danger">
-                <span><b>Sorry!</b> - @TempData["Erro"] </span>
+                <span><b>Um Erro ocorreu!</b> - @TempData["Erro"] </span>
             </div>
         }
-
-        <div class="row">
-            <div class="col-md-8 offset-2">
-                <form asp-action="Register">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                    <div class="form-group">
-                        <label asp-for="Email" class="control-label"></label>
-                        <input asp-for="Email" class="form-control" />
-                        <span asp-validation-for="Email" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Password" class="control-label"></label>
-                        <input asp-for="Password" class="form-control" type="password" />
-                        <span asp-validation-for="Password" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="CheckPassword" class="control-label"></label>
-                        <input asp-for="CheckPassword" class="form-control" type="password" />
-                        <span asp-validation-for="CheckPassword" class="text-danger"></span>
-                    </div>
-
-                    <!-- Campos para Endereco -->
-                    <div class="form-group">
-                        <label asp-for="Endereco.Rua" class="control-label"></label>
-                        <input asp-for="Endereco.Rua" class="form-control" />
-                        <span asp-validation-for="Endereco.Rua" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Endereco.Bairro" class="control-label"></label>
-                        <input asp-for="Endereco.Bairro" class="form-control" />
-                        <span asp-validation-for="Endereco.Bairro" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Endereco.Cidade" class="control-label"></label>
-                        <input asp-for="Endereco.Cidade" class="form-control" />
-                        <span asp-validation-for="Endereco.Cidade" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Endereco.Numero" class="control-label"></label>
-                        <input asp-for="Endereco.Numero" class="form-control" />
-                        <span asp-validation-for="Endereco.Numero" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <input class="btn btn-outline-success float-right" type="submit" value="Sign up" />
-                        <a class="btn btn-outline-secondary" asp-controller="Conta" asp-action="Register">Cancel</a>
-                    </div>
-                </form>
+        <form asp-action="Register" class="form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <p class="title">Criar Conta</p>
+            <p class="message">Crie sua Conta agora e reserve seus Livros. </p>
+            <!-- Campos do Formulário -->
+            <label asp-for="Email">
+                <input required="" placeholder="" type="email" class="input" asp-for="Email">
+                <span asp-validation-for="Email">Email</span>
+            </label>
+            <label asp-for="Password">
+                <input asp-for="Password" required="" placeholder="" type="password" class="input">
+                <span asp-validation-for="Password">Password</span>
+            </label>
+            <label asp-for="CheckPassword">
+                <input asp-for="CheckPassword" required="" placeholder="" type="password" class="input">
+                <span asp-validation-for="CheckPassword">Confirm password</span>
+            </label>
+            <div class="flex">
+                <label asp-for="Endereco.Rua">
+                    <input asp-for="Endereco.Rua" required="" placeholder="" type="text" class="input">
+                    <span asp-validation-for="Endereco.Rua">Rua</span>
+                </label>
+                <label asp-for="Endereco.Bairro">
+                    <input asp-for="Endereco.Bairro" required="" placeholder="" type="text" class="input">
+                    <span asp-validation-for="Endereco.Bairro">Bairro</span>
+                </label>
             </div>
-        </div>
+            <div class="flex">
+                <label asp-for="Endereco.Cidade">
+                    <input asp-for="Endereco.Cidade" required="" placeholder="" type="text" class="input">
+                    <span asp-validation-for="Endereco.Cidade">Cidade</span>
+                </label>
+                <label asp-for="Endereco.Numero">
+                    <input asp-for="Endereco.Numero" required="" placeholder="" type="text" class="input">
+                    <span asp-validation-for="Endereco.Numero">Número</span>
+                </label>
+            </div>
+            <input class="submit" type="submit" value="Criar Conta" />
+            <p class="signin">Já tem uma Conta? <a asp-controller="Conta" asp-action="Login">Sign in</a></p>
+        </form>
     </div>
 </div>
+
 

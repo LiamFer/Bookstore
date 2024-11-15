@@ -1,7 +1,14 @@
 ﻿@using Orion_Books.ViewModels
 @model LibraryViewModel
 <div class="container my-5">
-    <h2 class="mb-4">Livros Reservados Atualmente</h2>
+    <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-green rounded box-shadow">
+        <svg clip-rule="evenodd" fill="white" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" class="me-3" width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m20 20h-15.25c-.414 0-.75.336-.75.75s.336.75.75.75h15.75c.53 0 1-.47 1-1v-15.75c0-.414-.336-.75-.75-.75s-.75.336-.75.75zm-1-17c0-.478-.379-1-1-1h-15c-.62 0-1 .519-1 1v15c0 .621.52 1 1 1h15c.478 0 1-.379 1-1zm-9.25 6.75v-3c0-.414.336-.75.75-.75s.75.336.75.75v3h3c.414 0 .75.336.75.75s-.336.75-.75.75h-3v3c0 .414-.336.75-.75.75s-.75-.336-.75-.75v-3h-3c-.414 0-.75-.336-.75-.75s.336-.75.75-.75z" fill-rule="nonzero" /></svg>
+        <div class="lh-100">
+            <h6 class="mb-0 text-white lh-100">Livros Adicionados</h6>
+            <small>Essa é a sua Biblioteca!</small>
+        </div>
+    </div>    
+    
     <div class="row">
         @foreach (var record in Model.library)
         {
@@ -17,7 +24,11 @@
                                 <strong>Data do Empréstimo:</strong> @record.DataEmprestimo.ToString("dd/MM/yyyy")
                             </p>
 
-                            <a asp-controller="Livro" asp-action="ReservedBook" asp-route-id="@record.Livro.Id" class="btn btn-primary btn-sm mt-auto">Ver Informações</a>
+
+                        <a asp-controller="Livro" asp-action="ReservedBook" asp-route-id="@record.Livro.Id" class="infobutton mt-auto">
+                            <span>Ver Informações</span>
+                        </a>
+
                         </div>
 
                         <span class="position-absolute top-0 end-0 p-2 badge @(diasRestantes >= 1 ? "bg-success" : "bg-danger")">
@@ -36,8 +47,13 @@
     </div>
 
 <div class="container my-5">
-    <h2>Histórico de Livros Lidos</h2>
-
+        <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-green rounded box-shadow">
+            <svg clip-rule="evenodd" fill="white" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" class="me-3" width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 24h-17c-1.657 0-3-1.343-3-3v-18c0-1.657 1.343-3 3-3h17v24zm-2-4h-14.505c-1.375 0-1.375 2 0 2h14.505v-2zm0-18h-3v9l-2-1.547-2 1.547v-9h-8v16h15v-16z" /></svg>
+            <div class="lh-100">
+                <h6 class="mb-0 text-white lh-100">Histórico de Leitura</h6>
+                <small>Esses são seus ultimos Livros lidos!</small>
+            </div>
+        </div>
         @if (!Model.history.Any())
         {
             <p class="text-muted">Não foram encontrados livros no seu Histórico.</p>
@@ -84,4 +100,65 @@
     .custom-carousel-control .carousel-control-next-icon {
     background-color: black; /* Define a cor preta para as setas */
     border-radius: 50%;      /* Deixa as setas arredondadas, se desejar */
-}</style>
+    }
+    .bg-green{
+        background-color: #23c483;
+    }
+
+    
+
+    .infobutton {
+        text-align:center;
+        outline: none;
+        cursor: pointer;
+        border: none;
+        padding: 0.9rem 2rem;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+        letter-spacing: 0.05rem;
+        font-weight: 700;
+        font-size: 12px;
+        border-radius: 500px;
+        overflow: hidden;
+        background: #23c483;
+        color: ghostwhite;
+        text-decoration:none;
+    }
+
+        .infobutton span {
+        position: relative;
+        z-index: 10;
+        transition: color 0.4s;
+    }
+
+        .infobutton:hover span {
+        color: black;
+    }
+
+        .infobutton::before,
+        .infobutton::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+        .infobutton::before {
+        content: "";
+        background: #000;
+        width: 120%;
+        left: -10%;
+        transform: skew(30deg);
+        transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    }
+
+        .infobutton:hover::before {
+        transform: translate3d(100%, 0, 0);
+    }
+
+</style>
