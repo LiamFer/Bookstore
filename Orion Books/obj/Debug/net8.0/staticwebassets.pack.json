@@ -5,8 +5,28 @@
       "PackagePath": "staticwebassets\\Orion Books.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\Misc\\biography.png",
+      "PackagePath": "staticwebassets\\Misc\\biography.png"
+    },
+    {
       "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\Misc\\book_recommendations.svg",
       "PackagePath": "staticwebassets\\Misc\\book_recommendations.svg"
+    },
+    {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\Misc\\fantasy.jpg",
+      "PackagePath": "staticwebassets\\Misc\\fantasy.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\Misc\\girl_reading.jpg",
+      "PackagePath": "staticwebassets\\Misc\\girl_reading.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\Misc\\history.jpg",
+      "PackagePath": "staticwebassets\\Misc\\history.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\Misc\\ocean.jpg",
+      "PackagePath": "staticwebassets\\Misc\\ocean.jpg"
     },
     {
       "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\site.css",

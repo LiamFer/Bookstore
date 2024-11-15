@@ -60,7 +60,7 @@ namespace Orion_Books.DAO
                 .Select(g => g.Key)                
                 .ToListAsync();
 
-            return await Context.Emprestimo
+            IEnumerable<Livro> Recommendations = await Context.Emprestimo
                 .Include(e => e.Livro)
                 .Where(e => mostReadGenres.Contains(e.Livro.Genero))
                 .Select(e => e.Livro)
@@ -68,6 +68,16 @@ namespace Orion_Books.DAO
                 .OrderBy(r => Guid.NewGuid())
                 .Take(3)
                 .ToListAsync();
+
+            // Se ele não conseguir voltar recomendações eu só puxo 3 livros aleatórios e mando pra View
+            return Recommendations.Count() > 0 ? Recommendations : await Context.Emprestimo
+                .Include(e => e.Livro)
+                .Select(e => e.Livro)
+                .Distinct()
+                .OrderBy(r => Guid.NewGuid())
+                .Take(3)
+                .ToListAsync();
+
         }
 
 
