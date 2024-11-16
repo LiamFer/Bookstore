@@ -6,6 +6,15 @@
 
     <div class="container ">
         <div class="bg-white p-4 rounded shadow">
+            <div class="d-flex align-items-center p-3 mb-3 text-white-50 rounded box-shadow" style="background-color:black;">
+                <svg clip-rule="evenodd" fill="white" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" class="me-3" width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m2 4v16.002c0 .385.22.735.567.902.346.166.758.119 1.058-.121l4.725-3.781h12.65c.552 0 1-.448 1-1v-12.002c0-.552-.448-1-1-1h-18c-.552 0-1 .448-1 1zm18.5 11.502h-12.677l-4.323 3.46v-14.462h17zm-8.502-6.5c.414 0 .75.336.75.75v3.5c0 .414-.336.75-.75.75s-.75-.336-.75-.75v-3.5c0-.414.336-.75.75-.75zm.002-3c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1z" fill-rule="nonzero" />
+                </svg>
+                <div class="lh-100">
+                    <h6 class="mb-0 text-white lh-100">@Model.Livro.Titulo</h6>
+                    <small>Um livro escrito por @Model.Livro.Autor</small>
+                </div>
+            </div>
             <div class="row">
                 <!-- Coluna da imagem de capa -->
                 <div class="col-md-4 text-center">
@@ -120,17 +129,9 @@
         background-color: black;
     }
     .boxPattern {
-        width: 100%;
-        height: 100%;
-        padding-top:40px;
-        padding-bottom: 40px;
-        --s: 194px; /* control the size */
-        --c1: #f6edb3;
-        --c2: #acc4a3;
-        --_l: #0000 calc(25% / 3), var(--c1) 0 25%, #0000 0;
-        --_g: conic-gradient(from 120deg at 50% 87.5%, var(--c1) 120deg, #0000 0);
-        background: var(--_g), var(--_g) 0 calc(var(--s) / 2), conic-gradient(from 180deg at 75%, var(--c2) 60deg, #0000 0), conic-gradient(from 60deg at 75% 75%, var(--c1) 0 60deg, #0000 0), linear-gradient(150deg, var(--_l)) 0 calc(var(--s) / 2), conic-gradient( at 25% 25%, #0000 50%, var(--c2) 0 240deg, var(--c1) 0 300deg, var(--c2) 0 ), linear-gradient(-150deg, var(--_l)) #55897c /* third color here */;
-        background-size: calc(0.866 * var(--s)) var(--s);
+        background-image: repeating-radial-gradient( #0c0a0a 80%,#2f312f 90%,#3f4549 90%);
+        background-size: 65px 65px;
+        padding: 40px 0;
     }
 
     .infobutton {

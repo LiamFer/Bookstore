@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cuh7dHVMEQGrvh9fJyl1YMTeSaJ+yk/1+gIr8ujOW0A=",
+  "Hash": "U3/oPw2OHcjBMPd4V+YAK2QOKbloJqAG9Ck5zqSx3iA=",
   "Source": "Orion Books",
   "BasePath": "_content/Orion Books",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Orion Books.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\homePage.css",
+      "SourceId": "Orion Books",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\",
+      "BasePath": "_content/Orion Books",
+      "RelativePath": "css/homePage.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\homePage.css"
     },
     {
       "Identity": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\loginPage.css",

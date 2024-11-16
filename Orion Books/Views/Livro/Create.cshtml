@@ -1,58 +1,71 @@
 ﻿@model Orion_Books.Models.Livro
 
-<div class="container mt-5">
-    <h1>Adicionar Novo Livro</h1>
+<div class="container-fluid p-6 position-relative boxPattern">
+    <div class="container">
+        <div class="bg-white p-4 rounded shadow">
 
-    <div class="row">
-        <div class="col-md-6">
-            <div id="preview" style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; display: flex; align-items: center; justify-content: center; position: relative;">
-                <h5 id="previewText" style="position: absolute;">Pré-visualização da Capa</h5>
-                <img id="coverPreview" src="" alt="Pré-visualização da Capa" class="img-fluid" style="max-height: 100%; max-width: 100%; object-fit: cover; display:none;" />
+            <!-- Título de cabeçalho -->
+            <div class="d-flex align-items-center p-3 mb-3 text-white-50 rounded box-shadow" style="background-color:black;">
+                <svg clip-rule="evenodd" fill="white" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" class="me-3" width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m11.25 6c.398 0 .75.352.75.75 0 .414-.336.75-.75.75-1.505 0-7.75 0-7.75 0v12h17v-8.75c0-.414.336-.75.75-.75s.75.336.75.75v9.25c0 .621-.522 1-1 1h-18c-.48 0-1-.379-1-1v-13c0-.481.38-1 1-1zm-2.011 6.526c-1.045 3.003-1.238 3.45-1.238 3.84 0 .441.385.626.627.626.272 0 1.108-.301 3.829-1.249zm.888-.889 3.22 3.22 8.408-8.4c.163-.163.245-.377.245-.592 0-.213-.082-.427-.245-.591-.58-.578-1.458-1.457-2.039-2.036-.163-.163-.377-.245-.591-.245-.213 0-.428.082-.592.245z" fill-rule="nonzero" />
+                </svg>
+                <div class="lh-100">
+                    <h6 class="mb-0 text-white lh-100">Adicionar Novo Livro</h6>
+                    <small>Aqui você pode adicionar um novo livro ao catálogo</small>
+                </div>
             </div>
-        </div>
-        <div class="col-md-6 mb-9">
-            <!-- Adicionei mb-4 aqui para espaçamento inferior -->
-            <form method="post" asp-action="Create">
-                <input asp-for="Disponivel" type="hidden" name="Disponivel" value=True />
-                <div class="mb-3">
-                    <label asp-for="Titulo" class="form-label">Título</label>
-                    <input asp-for="Titulo" type="text" class="form-control" name="Titulo" required>
-                    <span asp-validation-for="Titulo" class="text-danger"></span>
-                </div>
 
-                <div class="mb-3">
-                    <label asp-for="Autor" class="form-label">Autor</label>
-                    <input asp-for="Autor" type="text" class="form-control" name="Autor" required>
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="preview" style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
+                        <h5 id="previewText" style="position: absolute;">Pré-visualização da Capa</h5>
+                        <img id="coverPreview" src="" alt="Pré-visualização da Capa" class="img-fluid" style="max-height: 100%; max-width: 100%; object-fit: cover; display:none;" />
+                    </div>
                 </div>
+                <div class="col-md-6">
+                    <form method="post" asp-action="Create">
+                        <input asp-for="Disponivel" type="hidden" name="Disponivel" value="True" />
+                        <div class="mb-3">
+                            <label asp-for="Titulo" class="form-label">Título</label>
+                            <input asp-for="Titulo" type="text" class="form-control" name="Titulo" required>
+                            <span asp-validation-for="Titulo" class="text-danger"></span>
+                        </div>
 
-                <div class="mb-3">
-                    <label asp-for="Genero" class="form-label">Gênero</label>
-                    <input asp-for="Genero" type="text" class="form-control" name="Genero" required>
+                        <div class="mb-3">
+                            <label asp-for="Autor" class="form-label">Autor</label>
+                            <input asp-for="Autor" type="text" class="form-control" name="Autor" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Genero" class="form-label">Gênero</label>
+                            <input asp-for="Genero" type="text" class="form-control" name="Genero" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="AnoPublicado" class="form-label">Ano Publicado</label>
+                            <input asp-for="AnoPublicado" type="number" class="form-control" name="AnoPublicado" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ISBN" class="form-label">ISBN</label>
+                            <input asp-for="ISBN" type="text" class="form-control" name="ISBN" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CapaURL" class="form-label">URL da Capa</label>
+                            <input asp-for="CapaURL" type="url" class="form-control" id="capaURL" name="CapaURL" required oninput="updatePreview()">
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Sinopse" class="form-label">Sinopse</label>
+                            <textarea asp-for="Sinopse" class="form-control" name="Sinopse" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Adicionar Livro</button>
+                        <a href="@Url.Action("Index", "Livro")" class="btn btn-secondary">Voltar</a>
+                    </form>
                 </div>
-
-                <div class="mb-3">
-                    <label asp-for="AnoPublicado" class="form-label">Ano Publicado</label>
-                    <input asp-for="AnoPublicado" type="number" class="form-control" name="AnoPublicado" required>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="ISBN" class="form-label">ISBN</label>
-                    <input asp-for="ISBN" type="text" class="form-control" name="ISBN" required>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="CapaURL" class="form-label">URL da Capa</label>
-                    <input asp-for="CapaURL" type="url" class="form-control" id="capaURL" name="CapaURL" required oninput="updatePreview()">
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Sinopse" class="form-label">Sinopse</label>
-                    <textarea asp-for="Sinopse" class="form-control" name="Sinopse" rows="5" required></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Adicionar Livro</button>
-                <a href="@Url.Action("Index", "Livro")" class="btn btn-secondary">Voltar</a>
-            </form>
+            </div>
         </div>
     </div>
 </div>
@@ -76,15 +89,32 @@
 }
 
 <style>
-    /* Estilo para o foco dos campos do formulário */
+    .boxPattern {
+        background-image: repeating-radial-gradient( #0c0a0a 80%,#2f312f 90%,#3f4549 90%);
+        background-size: 65px 65px;
+        padding: 40px 0;
+    }
+
     .form-control:focus {
         border-color: #6f42c1; /* Cor roxa clarinha */
         box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25); /* Sombra roxa clarinha */
     }
 
-    /* Assegura que o tamanho do preview seja igual ao do formulário */
     #preview {
-        height: 100%; /* Para que o tamanho se ajuste automaticamente */
+        height: 100%;
         min-height: 400px; /* Definindo uma altura mínima para o preview */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        max-width: 1200px;
+    }
+
+    /* Ajuste do layout e das bordas */
+    .btn {
+        width: auto;
+        margin-top: 20px;
     }
 </style>
