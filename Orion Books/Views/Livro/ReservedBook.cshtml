@@ -6,56 +6,137 @@
     var prazoAtrasado = diasRestantes <= 0;
 }
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-4">
-            <img src="@Model.Livro.CapaURL" alt="Capa do Livro" class="img-fluid rounded shadow">
-        </div>
-
-        <div class="col-md-8">
-            <h2 class="fw-bold">@Model.Livro.Titulo</h2>
-            <p class="text-muted">Autor: <span class="text-dark">@Model.Livro.Autor</span></p>
-            <p class="text-muted">Gênero: <span class="text-dark">@Model.Livro.Genero</span></p>
-
-            <div class="mt-4">
-                <h5 class="fw-bold">Descrição</h5>
-                <p class="text-justify">
-                    @Model.Livro.Sinopse
-                </p>
+<div class="container-fluid p-6 position-relative boxPattern">
+    <div class="container">
+        <div class="bg-white p-4 rounded shadow">
+            <!-- Cabeçalho informativo -->
+            <div class="d-flex align-items-center p-3 mb-3 text-white-50 rounded box-shadow" style="background-color:black;">
+                <svg clip-rule="evenodd" fill="white" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" class="me-3" width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0c-3.31 0-6.291 1.353-8.459 3.522l-2.48-2.48-1.061 7.341 7.437-.966-2.489-2.488c1.808-1.808 4.299-2.929 7.052-2.929 5.514 0 10 4.486 10 10s-4.486 10-10 10c-3.872 0-7.229-2.216-8.89-5.443l-1.717 1.046c2.012 3.803 6.005 6.397 10.607 6.397 6.627 0 12-5.373 12-12s-5.373-12-12-12z" />
+                </svg>
+                <div class="lh-100">
+                    <h6 class="mb-0 text-white lh-100">Está quase Lá!</h6>
+                    <small>Confirme as informações da sua Devolução</small>
+                </div>
             </div>
 
-            <div class="mt-4">
-                <h5 class="fw-bold">Informações do Empréstimo</h5>
-                <p class="text-muted">Data do Empréstimo: <span class="text-dark">@Model.emprestimo.DataEmprestimo.ToString("dd/MM/yyyy")</span></p>
-                <p class="text-muted">Data de Devolução: <span class="text-dark">@Model.emprestimo.DataDevolucao.ToString("dd/MM/yyyy")</span></p>
-                <p class="text-muted">
-                    Tempo Restante:
-                    @if (@diasRestantes > 0)
-                    {
-                        <span class="fw-bold text-danger">@diasRestantes DIA(S) RESTANTE(S) PARA DEVOLUÇÃO</span>
-                    } else
-                    {
-                        <span class="fw-bold text-danger">ENTREGA DO LIVRO ATRASADA</span>
-                    }
-                </p>
-            </div>
+            <!-- Conteúdo da devolução -->
+            <div class="row">
+                <!-- Coluna da imagem de capa do livro -->
+                <div class="col-md-4 text-center">
+                    <img src="@Model.Livro.CapaURL" class="img-fluid rounded mb-4" alt="Capa do Livro">
+                </div>
 
-            <div class="mt-4">
-                <form asp-action="ReturnBook" asp-controller="Livro" asp-route-id="@Model.Livro.Id" method="post">
-                    <button type="submit" class="btn btn-danger btn-lg">Devolver Livro</button>
-                </form>
+                <!-- Coluna com informações do empréstimo e do livro -->
+                <div class="col-md-8">
+                    <h1 class="mb-3">@Model.Livro.Titulo</h1>
+                    <p><strong>Autor:</strong> @Model.Livro.Autor</p>
+                    <p><strong>Gênero:</strong> @Model.Livro.Genero</p>
+                    <p><strong>Ano de Publicação:</strong> @Model.Livro.AnoPublicado</p>
+                    <p><strong>ISBN:</strong> @Model.Livro.ISBN</p>
+                    <p><strong>Sinopse:</strong> @Model.Livro.Sinopse</p>
+
+                    <!-- Informações do Empréstimo -->
+                    <h4 class="mt-4">Informações do Empréstimo</h4>
+                    <p><strong>Data do Empréstimo:</strong> @Model.emprestimo.DataEmprestimo.ToString("dd/MM/yyyy")</p>
+                    <p><strong>Data de Devolução:</strong> @Model.emprestimo.DataDevolucao.ToString("dd/MM/yyyy")</p>
+
+                    <p class="text-muted">
+                        Tempo Restante:
+                        @if (diasRestantes > 0)
+                        {
+                            <span class="fw-bold text-danger">@diasRestantes DIA(S) RESTANTE(S) PARA DEVOLUÇÃO</span>
+                        }
+                        else
+                        {
+                            <span class="fw-bold text-danger">ENTREGA DO LIVRO ATRASADA</span>
+                        }
+                    </p>
+
+                    <!-- Formulário para devolver o livro -->
+                    <form asp-action="ReturnBook" asp-controller="Livro" asp-route-id="@Model.Livro.Id" method="post">
+                        <button type="submit" class="infobutton mt-auto"><span>Efetuar Devolução</span></button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <style>
-    .container h2 {
-        color: #23C483;
+    .boxPattern {
+        width: 100%;
+        height: 100%;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        --s: 194px; /* Controla o tamanho do pattern */
+        --c1: #f6edb3;
+        --c2: #acc4a3;
+        --_l: #0000 calc(25% / 3), var(--c1) 0 25%, #0000 0;
+        --_g: conic-gradient(from 120deg at 50% 87.5%, var(--c1) 120deg, #0000 0);
+        background: var(--_g), var(--_g) 0 calc(var(--s) / 2), conic-gradient(from 180deg at 75%, var(--c2) 60deg, #0000 0), conic-gradient(from 60deg at 75% 75%, var(--c1) 0 60deg, #0000 0), linear-gradient(150deg, var(--_l)) 0 calc(var(--s) / 2), conic-gradient(at 25% 25%, #0000 50%, var(--c2) 0 240deg, var(--c1) 0 300deg, var(--c2) 0), linear-gradient(-150deg, var(--_l)) #55897c;
+        background-size: calc(0.866 * var(--s)) var(--s);
     }
 
-    .container h5 {
-        color: #343a40;
+    .bg-white {
+        background-color: #ffffff;
     }
+
+    .rounded {
+        border-radius: 0.25rem;
+    }
+
+    .shadow {
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    }
+
+    .infobutton {
+        text-align: center;
+        outline: none;
+        cursor: pointer;
+        border: none;
+        padding: 0.9rem 2rem;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+        letter-spacing: 0.05rem;
+        font-weight: 700;
+        font-size: 12px;
+        border-radius: 500px;
+        overflow: hidden;
+        background: #BB2D3B;
+        color: ghostwhite;
+        text-decoration: none;
+    }
+
+        .infobutton span {
+            position: relative;
+            z-index: 10;
+            transition: color 0.4s;
+        }
+
+        .infobutton::before,
+        .infobutton::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .infobutton::before {
+            content: "";
+            background: #000;
+            width: 120%;
+            left: -10%;
+            transform: skew(30deg);
+            transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+        }
+
+        .infobutton:hover::before {
+            transform: translate3d(100%, 0, 0);
+        }
 </style>
-

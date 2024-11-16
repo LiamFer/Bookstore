@@ -1,88 +1,71 @@
 ﻿@using Orion_Books.ViewModels
 @model LivroDetailViewModel
 
-<div class="container my-5">
-    <div class="row">
-        <!-- Coluna da imagem de capa -->
-        <div class="col-md-4 text-center">
-            <img src="@Model.Livro.CapaURL" class="img-fluid rounded mb-4" alt="Capa do Livro">
-        </div>
 
-        <!-- Coluna das informações do livro -->
-        <div class="col-md-8">
-            <h1 class="mb-3">@Model.Livro.Titulo</h1>
-            <p><strong>Autor:</strong> @Model.Livro.Autor</p>
-            <p><strong>Gênero:</strong> @Model.Livro.Genero</p>
-            <p><strong>Ano de Publicação:</strong> @Model.Livro.AnoPublicado</p>
-            <p><strong>ISBN:</strong> @Model.Livro.ISBN</p>
-            <p><strong>Sinopse:</strong> @Model.Livro.Sinopse</p>
+<div class="container-fluid p-6 position-relative boxPattern">
 
-            
-            <div class="mt-4">
+    <div class="container ">
+        <div class="bg-white p-4 rounded shadow">
+            <div class="row">
+                <!-- Coluna da imagem de capa -->
+                <div class="col-md-4 text-center">
+                    <img src="@Model.Livro.CapaURL" class="img-fluid rounded mb-4" alt="Capa do Livro">
+                </div>
 
-                <!-- Vejo se o Usuário está logado pra poder reservar algum livro -->
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <!-- Caso o Livro esteja Disponível o Usuário pode reservar ele -->
+                <!-- Coluna das informações do livro -->
+                <div class="col-md-8">
+                    <h1 class="mb-3">@Model.Livro.Titulo</h1>
+                    <p class="text-muted"><em>@Model.Livro.Autor</em></p>
+                    <p class="text-muted">@Model.Livro.Genero</p>
+                    <p><strong>Ano de Publicação:</strong> @Model.Livro.AnoPublicado</p>
+                    <p><strong>ISBN:</strong> @Model.Livro.ISBN</p>
+                    <p><strong>Sinopse:</strong> @Model.Livro.Sinopse</p>
 
-                    @if (Model.Livro.Disponivel)
-                    {
-                        <a asp-controller="Livro" asp-action="Borrow" asp-route-id="@Model.Livro.Id" class="btn btn-primary btn-lg">Reservar Livro</a>
-                    }
-                    else
-                    {
-                        <button class="btn btn-secondary btn-lg" disabled>Livro Indisponível para Reserva</button>
-                    }
-                } else
-                {
-                    <a asp-controller="Conta" asp-action="Login" class="btn btn-primary btn-lg">Faça Login para Reservar</a>
-                }
-
-
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container my-5">
-    <h2>Outros livros do mesmo gênero</h2>
-
-    @if (!Model.LivrosRecomendados.Any())
-    {
-        <p class="text-muted">Não foram encontrados livros similares a este.</p>
-    }
-    else
-    {
-        <div id="similarBooksCarousel" class="carousel slide bg-light p-4 rounded"
-             style="min-height: 300px;"
-             data-bs-ride="@(Model.LivrosRecomendados.Count() >= 5 ? "carousel" : "")">
-
-            <div class="carousel-inner">
-                <!-- Primeira página do carrossel -->
-                <div class="carousel-item active">
-                    <div class="row">
-                        @foreach (var livro in Model.LivrosRecomendados.Take(4))
+                    <div class="mt-4">
+                        <!-- Botões de ação -->
+                        @if (User.Identity.IsAuthenticated)
                         {
-                            
-                            <div class="col-6 col-md-3 text-center mb-4">
-                                <img src="@livro.CapaURL" class="img-fluid rounded mb-2" alt="Capa do Livro" style="height: 150px; object-fit: cover;">
-                                <h6>@livro.Titulo</h6>
-                                <p class="text-muted">@livro.Autor</p>
-                                <a asp-controller="Livro" asp-action="Detail" asp-route-id="@livro.Id" class="btn btn-success btn-sm">Exibir Informações</a>
-                            </div>
-                            
+                            @if (Model.Livro.Disponivel)
+                            {
+                                <a asp-controller="Livro" asp-action="Borrow" asp-route-id="@Model.Livro.Id" class="infobutton mt-auto"><span>Reservar Livro</span></a>
+
+                            }
+                            else
+                            {
+                                <button class="btn btn-secondary btn-lg" disabled>Livro Indisponível para Reserva</button>
+                            }
+                        }
+                        else
+                        {
+                            <a asp-controller="Conta" asp-action="Login" class="btn btn-primary btn-lg">Faça Login para Reservar</a>
                         }
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- Segunda página do carrossel -->
-                @if (Model.LivrosRecomendados.Count() > 4)
-                {
-                    <div class="carousel-item">
-                        <div class="row">
-                            @foreach (var livro in Model.LivrosRecomendados.Skip(4).Take(4))
-                            {
-                                @if (Model.Livro.CapaURL != livro.CapaURL)
+        <!-- Seção de livros similares -->
+        <div class="bg-white p-4 mt-5 rounded shadow">
+            <div class="d-flex align-items-center p-3 mb-3 text-white-50 rounded box-shadow" style="background-color:black;">
+                <svg clip-rule="evenodd" fill="white" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" class="me-3" width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 24h-17c-1.657 0-3-1.343-3-3v-18c0-1.657 1.343-3 3-3h17v24zm-2-4h-14.505c-1.375 0-1.375 2 0 2h14.505v-2zm0-18h-3v9l-2-1.547-2 1.547v-9h-8v16h15v-16z" /></svg>
+                <div class="lh-100">
+                    <h6 class="mb-0 text-white lh-100">Livros Similares a este.</h6>
+                    <small>Livros que você pode gostar com base nesse!</small>
+                </div>
+            </div>
+            @if (!Model.LivrosRecomendados.Any())
+            {
+                <p class="text-muted">Não foram encontrados livros similares a este.</p>
+            }
+            else
+            {
+                <div id="similarBooksCarousel" class="carousel slide"
+                     data-bs-ride="@(Model.LivrosRecomendados.Count() >= 5 ? "carousel" : "")">
+                    <div class="carousel-inner">
+                        <!-- Primeira página do carrossel -->
+                        <div class="carousel-item active">
+                            <div class="row">
+                                @foreach (var livro in Model.LivrosRecomendados.Take(4))
                                 {
                                     <div class="col-6 col-md-3 text-center mb-4">
                                         <img src="@livro.CapaURL" class="img-fluid rounded mb-2" alt="Capa do Livro" style="height: 150px; object-fit: cover;">
@@ -91,24 +74,119 @@
                                         <a asp-controller="Livro" asp-action="Detail" asp-route-id="@livro.Id" class="btn btn-success btn-sm">Exibir Informações</a>
                                     </div>
                                 }
-                            }
+                            </div>
                         </div>
-                    </div>
-                }
-            </div>
 
-            <!-- Controles do carrossel -->
-            @if (Model.LivrosRecomendados.Count() >= 5)
-            {
-                <button class="carousel-control-prev" type="button" data-bs-target="#similarBooksCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#similarBooksCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                        <!-- Segunda página do carrossel -->
+                        @if (Model.LivrosRecomendados.Count() > 4)
+                        {
+                            <div class="carousel-item">
+                                <div class="row">
+                                    @foreach (var livro in Model.LivrosRecomendados.Skip(4).Take(4))
+                                    {
+                                        <div class="col-6 col-md-3 text-center mb-4">
+                                            <img src="@livro.CapaURL" class="img-fluid rounded mb-2" alt="Capa do Livro" style="height: 150px; object-fit: cover;">
+                                            <h6>@livro.Titulo</h6>
+                                            <p class="text-muted">@livro.Autor</p>
+                                            <a asp-controller="Livro" asp-action="Detail" asp-route-id="@livro.Id" class="btn btn-success btn-sm">Exibir Informações</a>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                    <!-- Controles do carrossel -->
+                    @if (Model.LivrosRecomendados.Count() >= 5)
+                    {
+                        <button class="carousel-control-prev" type="button" data-bs-target="#similarBooksCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#similarBooksCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    }
+                </div>
             }
         </div>
-    }
+    </div>
 </div>
+
+<style>
+
+    .bg-green {
+        background-color: black;
+    }
+    .boxPattern {
+        width: 100%;
+        height: 100%;
+        padding-top:40px;
+        padding-bottom: 40px;
+        --s: 194px; /* control the size */
+        --c1: #f6edb3;
+        --c2: #acc4a3;
+        --_l: #0000 calc(25% / 3), var(--c1) 0 25%, #0000 0;
+        --_g: conic-gradient(from 120deg at 50% 87.5%, var(--c1) 120deg, #0000 0);
+        background: var(--_g), var(--_g) 0 calc(var(--s) / 2), conic-gradient(from 180deg at 75%, var(--c2) 60deg, #0000 0), conic-gradient(from 60deg at 75% 75%, var(--c1) 0 60deg, #0000 0), linear-gradient(150deg, var(--_l)) 0 calc(var(--s) / 2), conic-gradient( at 25% 25%, #0000 50%, var(--c2) 0 240deg, var(--c1) 0 300deg, var(--c2) 0 ), linear-gradient(-150deg, var(--_l)) #55897c /* third color here */;
+        background-size: calc(0.866 * var(--s)) var(--s);
+    }
+
+    .infobutton {
+        text-align: center;
+        outline: none;
+        cursor: pointer;
+        border: none;
+        padding: 0.9rem 2rem;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+        letter-spacing: 0.05rem;
+        font-weight: 700;
+        font-size: 12px;
+        border-radius: 500px;
+        overflow: hidden;
+        background: #23c483;
+        color: ghostwhite;
+        text-decoration: none;
+    }
+
+        .infobutton span {
+            position: relative;
+            z-index: 10;
+            transition: color 0.4s;
+        }
+
+        .infobutton:hover span {
+            color: black;
+        }
+
+        .infobutton::before,
+        .infobutton::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .infobutton::before {
+            content: "";
+            background: #000;
+            width: 120%;
+            left: -10%;
+            transform: skew(30deg);
+            transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+        }
+
+        .infobutton:hover::before {
+            transform: translate3d(100%, 0, 0);
+        }
+</style>
+
+
+

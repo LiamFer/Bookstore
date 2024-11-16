@@ -147,5 +147,19 @@ namespace Orion_Books.Controllers
             return RedirectToAction("Index");
         }
 
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            Livro book = await _livroDao.GetById(id);
+            return View(book);
+        }
+
+        [HttpPost,ActionName("Delete")]
+        public async Task<IActionResult> DeleteBook(int id)
+        {
+            Livro book = await _livroDao.GetById(id);
+            _livroDao.Delete(book);
+            return RedirectToAction("Index");
+        }
     }
 }

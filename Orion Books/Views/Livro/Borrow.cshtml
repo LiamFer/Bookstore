@@ -6,45 +6,147 @@
     var dataDevolucao = dataEmprestimo.AddDays(14);
 }
 
-<h1>Você deseja reservar o Livro</h1>
-<div class="container my-5">
-    <div class="row">
-        <!-- Coluna da imagem de capa do livro -->
-        <div class="col-md-4 text-center">
-            <img src="@Model.Livro.CapaURL" class="img-fluid rounded mb-4" alt="Capa do Livro">
-        </div>
+<div class="container-fluid p-6 position-relative boxPattern">
+    <div class="container">
+        <div class="bg-white p-4 rounded shadow">
 
-        <!-- Coluna com informações do empréstimo e do livro -->
-        <div class="col-md-8">
-            <h1 class="mb-3">@Model.Livro.Titulo</h1>
-            <p><strong>Autor:</strong> @Model.Livro.Autor</p>
-            <p><strong>Gênero:</strong> @Model.Livro.Genero</p>
-            <p><strong>Ano de Publicação:</strong> @Model.Livro.AnoPublicado</p>
-            <p><strong>ISBN:</strong> @Model.Livro.ISBN</p>
-            <p><strong>Sinopse:</strong> @Model.Livro.Sinopse</p>
-
-            <!-- Formulário para reservar o livro -->
-            <form asp-action="SucessBorrow" method="post">
-                <!-- Informações do Empréstimo (enviadas como campos ocultos) -->
-                <input type="hidden" asp-for="@Model.emprestimo.DataEmprestimo" value="@dataEmprestimo" />
-                <input type="hidden" asp-for="@Model.emprestimo.DataDevolucao" value="@dataDevolucao" />
-                <input type="hidden" asp-for="@Model.emprestimo.DataEntrega" value="null" />
-                <input type="hidden" asp-for="@Model.emprestimo.LivroId" value="@Model.Livro.Id" />
-                <input type="hidden" asp-for="@Model.emprestimo.Status" value="Pendente Devolução" />
-
-                <h4 class="mt-4">Informações do Empréstimo</h4>
-                <p><strong>Data do Empréstimo:</strong> @dataEmprestimo.ToString("dd/MM/yyyy")</p>
-                <p><strong>Data de Devolução:</strong> @dataDevolucao.ToString("dd/MM/yyyy")</p>
-
-                <!-- Informações do Usuário -->
-                <h5 class="mt-3">Seus Dados</h5>
-                <p><strong>Usuário:</strong> @User.Identity.Name</p>
-
-                <!-- Botão para confirmar o empréstimo -->
-                <div class="mt-4">
-                    <button type="submit" class="btn btn-primary btn-lg">Confirmar Empréstimo</button>
+            <div class="d-flex align-items-center p-3 mb-3 text-white-50 rounded box-shadow" style="background-color:black;">
+                <svg clip-rule="evenodd" fill="white" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" class="me-3" width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m6.864 3.424c.502-.301 1.136.063 1.136.642 0 .264-.138.509-.365.644-2.476 1.486-4.135 4.197-4.135 7.292 0 4.691 3.808 8.498 8.498 8.498s8.497-3.807 8.497-8.498c0-3.093-1.656-5.803-4.131-7.289-.225-.136-.364-.38-.364-.644 0-.582.635-.943 1.137-.642 2.91 1.748 4.858 4.936 4.858 8.575 0 5.519-4.479 9.998-9.997 9.998s-9.998-4.479-9.998-9.998c0-3.641 1.951-6.83 4.864-8.578zm7.136 12.576c0-.552.448-1 1-1s1 .448 1 1-.448 1-1 1-1-.448-1-1zm-3 0c0-.552.448-1 1-1s1 .448 1 1-.448 1-1 1-1-.448-1-1zm-3 0c0-.552.448-1 1-1s1 .448 1 1-.448 1-1 1-1-.448-1-1zm-.305-6.488s2.025 2.021 3.779 3.775c.147.146.339.219.53.219.192 0 .384-.073.531-.219 1.753-1.753 3.779-3.776 3.779-3.776.145-.145.217-.336.217-.526 0-.192-.074-.384-.221-.531-.292-.292-.766-.294-1.056-.004l-2.5 2.5v-8.2c0-.414-.336-.75-.75-.75s-.75.336-.75.75v8.2l-2.498-2.499c-.289-.289-.762-.286-1.054.006-.147.147-.221.339-.222.531 0 .19.071.38.215.524z" fill-rule="nonzero" /></svg>
+                
+                <div class="lh-100">
+                    <h6 class="mb-0 text-white lh-100">Está quase Lá!</h6>
+                    <small>Confirme as informações da sua Reserva</small>
                 </div>
-            </form>
+            </div>
+
+            <div class="row">
+                <!-- Coluna da imagem de capa do livro -->
+                <div class="col-md-4 text-center">
+                    <img src="@Model.Livro.CapaURL" class="img-fluid rounded mb-4" alt="Capa do Livro">
+                </div>
+
+                <!-- Coluna com informações do empréstimo e do livro -->
+                <div class="col-md-8">
+                    <h1 class="mb-3">@Model.Livro.Titulo</h1>
+                    <p><strong>Autor:</strong> @Model.Livro.Autor</p>
+                    <p><strong>Gênero:</strong> @Model.Livro.Genero</p>
+                    <p><strong>Ano de Publicação:</strong> @Model.Livro.AnoPublicado</p>
+                    <p><strong>ISBN:</strong> @Model.Livro.ISBN</p>
+                    <p><strong>Sinopse:</strong> @Model.Livro.Sinopse</p>
+
+                    <!-- Formulário para reservar o livro -->
+                    <form asp-action="SucessBorrow" method="post">
+                        <input type="hidden" asp-for="@Model.emprestimo.DataEmprestimo" value="@dataEmprestimo" />
+                        <input type="hidden" asp-for="@Model.emprestimo.DataDevolucao" value="@dataDevolucao" />
+                        <input type="hidden" asp-for="@Model.emprestimo.DataEntrega" value="null" />
+                        <input type="hidden" asp-for="@Model.emprestimo.LivroId" value="@Model.Livro.Id" />
+                        <input type="hidden" asp-for="@Model.emprestimo.Status" value="Pendente Devolução" />
+
+                        <h4 class="mt-4">Informações do Empréstimo</h4>
+                        <p><strong>Data do Empréstimo:</strong> @dataEmprestimo.ToString("dd/MM/yyyy")</p>
+                        <p><strong>Data de Devolução:</strong> @dataDevolucao.ToString("dd/MM/yyyy")</p>
+
+                        <h5 class="mt-3">Seus Dados</h5>
+                        <p><strong>Usuário:</strong> @User.Identity.Name</p>
+
+                        <div class="mt-4">
+                            <button type="submit" class="infobutton mt-auto"><span>Confirmar Reserva</span></button>
+                        </div>
+                    </form>
+
+                
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<style>
+    .boxPattern {
+        width: 100%;
+        height: 100%;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        --s: 194px; /* Controla o tamanho do pattern */
+        --c1: #f6edb3;
+        --c2: #acc4a3;
+        --_l: #0000 calc(25% / 3), var(--c1) 0 25%, #0000 0;
+        --_g: conic-gradient(from 120deg at 50% 87.5%, var(--c1) 120deg, #0000 0);
+        background: var(--_g), var(--_g) 0 calc(var(--s) / 2),
+            conic-gradient(from 180deg at 75%, var(--c2) 60deg, #0000 0),
+            conic-gradient(from 60deg at 75% 75%, var(--c1) 0 60deg, #0000 0),
+            linear-gradient(150deg, var(--_l)) 0 calc(var(--s) / 2),
+            conic-gradient(at 25% 25%, #0000 50%, var(--c2) 0 240deg, var(--c1) 0 300deg, var(--c2) 0),
+            linear-gradient(-150deg, var(--_l)) #55897c;
+        background-size: calc(0.866 * var(--s)) var(--s);
+    }
+
+    .bg-white {
+        background-color: #ffffff;
+    }
+
+    .rounded {
+        border-radius: 0.25rem;
+    }
+
+    .shadow {
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    }
+
+    .infobutton {
+        text-align: center;
+        outline: none;
+        cursor: pointer;
+        border: none;
+        padding: 0.9rem 2rem;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+        letter-spacing: 0.05rem;
+        font-weight: 700;
+        font-size: 12px;
+        border-radius: 500px;
+        overflow: hidden;
+        background: #23c483;
+        color: ghostwhite;
+        text-decoration: none;
+    }
+
+        .infobutton span {
+            position: relative;
+            z-index: 10;
+            transition: color 0.4s;
+        }
+
+        .infobutton:hover span {
+            color: black;
+        }
+
+        .infobutton::before,
+        .infobutton::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .infobutton::before {
+            content: "";
+            background: #000;
+            width: 120%;
+            left: -10%;
+            transform: skew(30deg);
+            transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+        }
+
+        .infobutton:hover::before {
+            transform: translate3d(100%, 0, 0);
+        }
+
+
+
+</style>
