@@ -1,0 +1,84 @@
+﻿@using Orion_Books.ViewModels
+@model EditUserViewModel
+
+<div class="container-fluid p-6 position-relative boxPattern">
+    <div class="container">
+        <div class="bg-white p-4 rounded shadow">
+            <div class="text-center mb-4">
+                <h2 class="text-black">Editar Perfil do Usuário</h2>
+            </div>
+            <form asp-action="EditUserProfile" method="post" class="mt-4">
+                <input type="hidden" asp-for="@Model.endereco.Id" value="@Model.endereco.Id">
+
+                <div class="form-group">
+                    <label for="Rua" class="form-label">Rua</label>
+                    <input type="text" class="form-control" id="Rua" asp-for="@Model.endereco.Rua" value="@Model.endereco.Rua" required>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="Bairro" class="form-label">Bairro</label>
+                    <input type="text" class="form-control" id="Bairro" asp-for="@Model.endereco.Bairro" value="@Model.endereco.Bairro" required>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="Cidade" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="Cidade" asp-for="@Model.endereco.Cidade" value="@Model.endereco.Cidade" required>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="Numero" class="form-label">Número</label>
+                    <input type="text" class="form-control" id="Numero" asp-for="@Model.endereco.Numero" value="@Model.endereco.Numero" required>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="UserId" class="form-label">ID do Usuário</label>
+                    <input type="text" class="form-control" id="UserId" asp-for="@Model.id" value="@Model.id" readonly>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                    <a href="/" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .boxPattern {
+        background-image: repeating-radial-gradient(#0c0a0a 80%, #2f312f 90%, #3f4549 90%);
+        background-size: 65px 65px;
+        padding: 40px 0;
+    }
+
+    .bg-white {
+        background: #fff;
+    }
+
+    .form-label {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .btn-primary {
+        background-color: #23c483;
+        border-color: #23c483;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #1da169;
+        border-color: #1da169;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+        border-color: #545b62;
+    }
+</style>

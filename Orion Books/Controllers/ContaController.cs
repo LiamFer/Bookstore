@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Orion_Books.Data;
+using Orion_Books.Interfaces;
 using Orion_Books.Models;
 using Orion_Books.ViewModels;
+using System.Security.Claims;
 
 namespace Orion_Books.Controllers
 {
@@ -11,12 +13,14 @@ namespace Orion_Books.Controllers
         private readonly UserManager<Usuario> _userManager;
         private readonly SignInManager<Usuario> _signInManager;
         private readonly ApplicationDbContext _context;
+        private readonly IUsuarioDAO _usuarioDAO;
 
-        public ContaController(UserManager<Usuario> userManager,SignInManager<Usuario> signInManager,ApplicationDbContext context)
+        public ContaController(UserManager<Usuario> userManager,SignInManager<Usuario> signInManager,ApplicationDbContext context,IUsuarioDAO usuarioDAO)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
+            _usuarioDAO = usuarioDAO;
         }
 
         public IActionResult Login()
@@ -94,6 +98,46 @@ namespace Orion_Books.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public async Task<IActionResult> EditUserProfile()
+        {
+            var UserID = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var user = await _usuarioDAO.GetById(UserID);
+            if (user == null) return View("Error");
+            var editUser = new EditUserViewModel()
+            {
+                id = user.Id,
+                endereco = new Endereco()
+                {
+                    Id = user.EnderecoId,
+                    Rua = user.Endereco.Rua,
+                    Bairro = user.Endereco.Bairro,
+                    Cidade = user.Endereco.Cidade,
+                    Numero = user.Endereco.Numero
 
+                }
+            };
+            return View(editUser);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditUserProfile(EditUserViewModel VM) {
+            // depois consigo implementar alteração de email e senha
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("","Erro ao Editar Perfil");
+                return View("EditUserProfile", VM);
+            }
+            var user = await _usuarioDAO.GetNoTracking(VM.id);
+
+            // Atualizando as info do endereço
+            user.Endereco.Rua = VM.endereco.Rua;
+            user.Endereco.Bairro = VM.endereco.Bairro;
+            user.Endereco.Cidade = VM.endereco.Cidade;
+            user.Endereco.Numero = VM.endereco.Numero;
+
+            _usuarioDAO.Update(user);
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

@@ -54,7 +54,7 @@
                                     Meu Perfil
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                                    <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Conta" asp-action="EditUserProfile">Editar Perfil</a></li>
                                     <li>
                                         <form asp-area="" asp-controller="Conta" asp-action="Logoff">
                                             <button class="dropdown-item">Log Off</button>
@@ -84,55 +84,37 @@
         @RenderBody()
     </main>
 
-    <footer class="footer mt-auto py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-6 col-md-2 mb-3 footer-links">
-                    <h5>Links</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Biblioteca</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Sobre</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
-                    </ul>
-                </div>
+    <footer class="bg-dark text-center text-white">
+        <div class="container p-4 pb-0">
+            <section class="mb-4">
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-twitter"></i>
+                </a>
 
-                <div class="col-6 col-md-2 mb-3 footer-links">
-                    <h5>Redes Sociais</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Facebook</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Instagram</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Twitter</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">LinkedIn</a></li>
-                    </ul>
-                </div>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-google"></i>
+                </a>
 
-                <div class="col-md-5 offset-md-1 mb-3">
-                    <h5>Siga-nos</h5>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/liamferz/" role="button">
+                    <i class="fab fa-instagram"></i>
+                </a>
 
-                </div>
-            </div>
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/willfernandes/" role="button">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
 
-            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                <p>&copy; 2024 Orion, Inc. Todos os Direitos Reservados.</p>
-            </div>
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/LiamFer" role="button">
+                    <i class="fab fa-github"></i>
+                </a>
+            </section>
+        </div>
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2024 Copyright - 
+            <a class="text-white" href="https://github.com/LiamFer">Orion</a>
         </div>
     </footer>
 

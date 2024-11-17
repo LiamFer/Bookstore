@@ -14,6 +14,11 @@ body {
 footer {
     background-color: #2c2f36;
     color: white;
+    background-color: #343a40; /* Cor de fundo escura */
+    color: white; /* Texto branco */
+    text-align: center; /* Centraliza o conteúdo */
+    padding-top: 20px; /* Espaçamento interno */
+    margin-top:auto;
 }
 
 .navbar {
@@ -39,36 +44,48 @@ footer {
         color: #23C483 !important;
     }
 
-.social-icons i {
-    font-size: 2rem;
-    margin: 0 10px;
+
+footer .container {
+    padding: 1rem; /* Espaçamento interno no container */
+}
+
+footer .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Largura do botão */
+    height: 40px; /* Altura do botão */
+    margin: 5px; /* Espaçamento entre os botões */
+    border: 1px solid #fff; /* Borda branca */
+    border-radius: 50%; /* Formato circular */
+    color: white; /* Cor do ícone */
+    background-color: transparent; /* Fundo transparente */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Animação suave */
+}
+
+footer .btn:hover {
+    border-color: #23c483;
+    background-color: #23c483; /* Fundo branco no hover */
+    color: white; /* Ícone escuro no hover */
+}
+
+footer .btn i {
+    font-size: 16px; /* Tamanho do ícone */
+}
+
+footer .text-center {
+    font-size: 14px; /* Tamanho do texto do copyright */
+    background-color: rgba(0, 0, 0, 0.2); /* Fundo semitransparente */
+    padding: 10px 0; /* Espaçamento */
+}
+
+footer a.text-white {
     color: white;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-icon {
     text-decoration: none;
+    transition: color 0.3s; /* Animação suave para links */
 }
 
-.social-icons i:hover {
-    transform: scale(1.2);
-    color: #23C483;
-}
-
-.footer-links {
-    margin-bottom: 1rem;
-}
-
-    .footer-links h5 {
-        font-size: 1.25rem;
-        margin-bottom: 1rem;
+    footer a.text-white:hover {
+        color: #ccc; /* Cor do link ao passar o mouse */
     }
-
-    .footer-links ul {
-        list-style-type: none;
-        padding-left: 0;
-    }
-
-        .footer-links ul li {
-            margin-bottom: 0.5rem;
-        }

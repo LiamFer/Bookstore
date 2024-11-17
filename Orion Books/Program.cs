@@ -12,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ILivroDAO,LivroDAO>();
 builder.Services.AddScoped<IEmprestimoDAO, EmprestimoDAO>();
+builder.Services.AddScoped<IUsuarioDAO, UsuarioDAO>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {

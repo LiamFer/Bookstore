@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Windows\Desktop\Stuff\Coding\Bookstore\Orion Books
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Windows/Desktop/Stuff/Coding/Bookstore/Orion Books/Views/Conta/EditUserProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFcRWRpdFVzZXJQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Windows/Desktop/Stuff/Coding/Bookstore/Orion Books/Views/Conta/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

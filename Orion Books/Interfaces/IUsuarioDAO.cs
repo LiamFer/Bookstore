@@ -5,11 +5,13 @@ namespace Orion_Books.Interfaces
     public interface IUsuarioDAO
     {
         Task<IEnumerable<Usuario>> GetAll();
-        Task<Usuario> GetById(int id);
+        Task<Usuario> GetById(string id);
+        Task<Usuario> GetNoTracking(string id);
 
-        bool Add(Usuario emprestimo);
-        bool Update(Emprestimo emprestimo);
-        bool Delete(Emprestimo emprestimo);
+
+        bool Add(Usuario user);
+        bool Update(Usuario user);
+        bool Delete(Usuario user);
         bool Save();
     }
 }
