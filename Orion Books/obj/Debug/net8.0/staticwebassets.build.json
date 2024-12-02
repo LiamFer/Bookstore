@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "U3/oPw2OHcjBMPd4V+YAK2QOKbloJqAG9Ck5zqSx3iA=",
+  "Hash": "4NuO6xSeDKItGii8HuBPmOsZGQ0ei/6pYXQt/TfrrIs=",
   "Source": "Orion Books",
   "BasePath": "_content/Orion Books",
   "Mode": "Default",
@@ -55,6 +55,25 @@
       "OriginalItemSpec": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Orion Books.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\borrowPage.css",
+      "SourceId": "Orion Books",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\",
+      "BasePath": "_content/Orion Books",
+      "RelativePath": "css/borrowPage.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\borrowPage.css"
+    },
+    {
       "Identity": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\homePage.css",
       "SourceId": "Orion Books",
       "SourceType": "Discovered",
@@ -72,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\homePage.css"
+    },
+    {
+      "Identity": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\indexPage.css",
+      "SourceId": "Orion Books",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\",
+      "BasePath": "_content/Orion Books",
+      "RelativePath": "css/indexPage.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\indexPage.css"
     },
     {
       "Identity": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\loginPage.css",

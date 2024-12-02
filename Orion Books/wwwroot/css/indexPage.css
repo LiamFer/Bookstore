@@ -1,0 +1,272 @@
+﻿.capa-livro {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    aspect-ratio: 1 / 1;
+}
+
+.bg-image {
+    background-size: cover;
+    background-position: center;
+}
+
+.container-fluid h1, .container-fluid h5, .container-fluid p {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* estilos do botaozinho da landing */
+.btn-outline-light {
+    border: 2px solid white;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.btn-outline-light:hover {
+    background-color: #23c483;
+    border: 2px solid #23c483;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.text-white-50 {
+    color: rgba(255, 255, 255, .5);
+}
+
+.bg-green {
+    background-color: #23c483;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+.lh-100 {
+    line-height: 1;
+}
+
+.lh-125 {
+    line-height: 1.25;
+}
+
+.lh-150 {
+    line-height: 1.5;
+}
+
+.carousel-container {
+    position: relative;
+}
+
+.carousel-inner .carousel-item {
+    position: relative;
+}
+
+.carousel-inner .carousel-item:hover .overlay {
+    opacity: 0.8;
+}
+
+.carousel-inner .carousel-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-inner .carousel-item:hover .overlay .text,
+.carousel-inner .carousel-item:hover .overlay .btn {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.carousel-inner .carousel-item .overlay .text,
+.carousel-inner .carousel-item .overlay .btn {
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.carousel-inner .carousel-item .overlay .text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-inner .carousel-item .overlay .btn {
+    background-color: #23C483;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-inner .carousel-item .overlay .btn:hover {
+    background-color: #1b9e6b;
+    transform: scale(1.1);
+}
+
+.highlight-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #23C483;
+}
+
+.info-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.info-container p {
+    color: #555;
+}
+
+.info-container {
+    margin-bottom: 2rem;
+}
+
+.area {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.575);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+}
+
+.circles li:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+.container-fluid .text-center {
+    position: relative;
+    z-index: 1;
+}

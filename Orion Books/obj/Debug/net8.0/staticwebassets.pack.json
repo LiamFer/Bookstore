@@ -37,8 +37,16 @@
       "PackagePath": "staticwebassets\\Misc\\ocean.jpg"
     },
     {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\borrowPage.css",
+      "PackagePath": "staticwebassets\\css\\borrowPage.css"
+    },
+    {
       "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\homePage.css",
       "PackagePath": "staticwebassets\\css\\homePage.css"
+    },
+    {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\indexPage.css",
+      "PackagePath": "staticwebassets\\css\\indexPage.css"
     },
     {
       "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\loginPage.css",
