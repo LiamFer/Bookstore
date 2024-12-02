@@ -12,6 +12,12 @@ Bookstore é um sistema de biblioteca desenvolvido utilizando **ASP.NET Core MVC
 
 ---
 
+## 🎥 Overview
+![Demonstração do site](https://github.com/LiamFer/Bookstore/blob/main/Orion%20Books/wwwroot/Misc/Project.gif?raw=true)
+
+
+---
+
 ## 🚀 Funcionalidades
 
 - 📖 Pesquisa e exibição de livros disponíveis.
@@ -43,14 +49,18 @@ O projeto segue o padrão **MVC**, separando as responsabilidades em três camad
 
 Exemplo de classe modelo:
 ```csharp
-public class Livro {
+public class Livro
+{
+    [Key]
     public int Id { get; set; }
     public string Titulo { get; set; }
-    public string Autor { get; set; }
+    public string Autor {  get; set; }
     public string Genero { get; set; }
+    public int AnoPublicado { get; set; }
     public string ISBN { get; set; }
-    public string Sinopse { get; set; }
     public string CapaURL { get; set; }
+    public string Sinopse { get; set; }
+    public bool Disponivel { get; set; }
 }
 ```
 
@@ -89,30 +99,31 @@ public IActionResult Borrow(int id) {
 
 Exemplo de classe DAO:
 ```csharp
-public class LivroDAO {
-    private readonly DbContext _context;
-
-    public LivroDAO(DbContext context) {
-        _context = context;
+public class LivroDAO : ILivroDAO
+{
+    private readonly ApplicationDbContext Context;
+    public LivroDAO(ApplicationDbContext context)
+    {
+        Context = context;
     }
 
-    public IEnumerable<Livro> ObterTodosLivros() {
-        return _context.Livros.ToList();
+    // Método pra Inserir um novo Livro no Banco de Dados
+    public bool Add(Livro livro)
+    {
+        Context.Add(livro);
+        return Save();
     }
 
-    public Livro ObterPorId(int id) {
-        return _context.Livros.Find(id);
+    public bool Delete(Livro livro)
+    {
+        Context.Remove(livro);
+        return Save();
     }
 }
 ```
 
 ---
 
-## 🎥 Demonstração
-
-![Demonstração do site](link_para_o_gif)
-
----
 
 ## 💡 Como executar o projeto
 
