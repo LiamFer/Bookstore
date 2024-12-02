@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Misc\\HomePage.jpg"
     },
     {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\Misc\\Project.gif",
+      "PackagePath": "staticwebassets\\Misc\\Project.gif"
+    },
+    {
       "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\Misc\\biography.png",
       "PackagePath": "staticwebassets\\Misc\\biography.png"
     },
@@ -39,6 +43,14 @@
     {
       "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\borrowPage.css",
       "PackagePath": "staticwebassets\\css\\borrowPage.css"
+    },
+    {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\detailPage.css",
+      "PackagePath": "staticwebassets\\css\\detailPage.css"
+    },
+    {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\edituserPage.css",
+      "PackagePath": "staticwebassets\\css\\edituserPage.css"
     },
     {
       "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\homePage.css",
