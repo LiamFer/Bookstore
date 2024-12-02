@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JrjnaSsq3kzQQVXwKvBlF4l+vpa86oD4Kr5WzRAhq4Y=",
+  "Hash": "MovFklggGHEa6ox150FWG/g4YYehHT7CmZMxW4Sa83g=",
   "Source": "Orion Books",
   "BasePath": "_content/Orion Books",
   "Mode": "Default",
@@ -150,6 +150,25 @@
       "OriginalItemSpec": "wwwroot\\css\\indexPage.css"
     },
     {
+      "Identity": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\libraryPage.css",
+      "SourceId": "Orion Books",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\",
+      "BasePath": "_content/Orion Books",
+      "RelativePath": "css/libraryPage.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\libraryPage.css"
+    },
+    {
       "Identity": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\loginPage.css",
       "SourceId": "Orion Books",
       "SourceType": "Discovered",
@@ -186,6 +205,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\registerPage.css"
+    },
+    {
+      "Identity": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\reservedPage.css",
+      "SourceId": "Orion Books",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\",
+      "BasePath": "_content/Orion Books",
+      "RelativePath": "css/reservedPage.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\reservedPage.css"
     },
     {
       "Identity": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\site.css",

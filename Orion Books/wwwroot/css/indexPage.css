@@ -12,9 +12,9 @@
     background-position: center;
 }
 
-.container-fluid h1, .container-fluid h5, .container-fluid p {
+/*.container-fluid h1, .container-fluid h5, .container-fluid p {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
+}*/
 
 /* estilos do botaozinho da landing */
 .btn-outline-light {

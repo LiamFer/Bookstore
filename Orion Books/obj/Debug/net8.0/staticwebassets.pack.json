@@ -61,12 +61,20 @@
       "PackagePath": "staticwebassets\\css\\indexPage.css"
     },
     {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\libraryPage.css",
+      "PackagePath": "staticwebassets\\css\\libraryPage.css"
+    },
+    {
       "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\loginPage.css",
       "PackagePath": "staticwebassets\\css\\loginPage.css"
     },
     {
       "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\registerPage.css",
       "PackagePath": "staticwebassets\\css\\registerPage.css"
+    },
+    {
+      "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\reservedPage.css",
+      "PackagePath": "staticwebassets\\css\\reservedPage.css"
     },
     {
       "Id": "C:\\Users\\Windows\\Desktop\\Stuff\\Coding\\Bookstore\\Orion Books\\wwwroot\\css\\site.css",
