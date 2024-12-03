@@ -33,7 +33,7 @@ Bookstore é um sistema de biblioteca desenvolvido utilizando **ASP.NET Core MVC
 
 - **ASP.NET Core MVC**: Estrutura principal para o desenvolvimento do projeto.
 - **Entity Framework**: ORM para comunicação com o banco de dados.
-- **MySQL**: Banco de dados utilizado para armazenar informações.
+- **SQL Server**: Banco de dados utilizado para armazenar informações.
 - **Bootstrap**: Para estilização e responsividade do site.
 - **HTML, CSS e JavaScript**: Tecnologias essenciais para criação da interface do usuário.
 
