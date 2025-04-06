@@ -33,7 +33,7 @@ namespace Orion_Books.Data
                         Endereco = new Endereco()
                         {
                             Rua = "Rua 14 de Julho",
-                            Bairro = "Capelacarai",
+                            Bairro = "Capela",
                             Cidade = "Vinhedo",
                             Numero = 193
                         }
